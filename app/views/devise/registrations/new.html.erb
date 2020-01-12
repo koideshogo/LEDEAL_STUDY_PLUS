@@ -1,0 +1,38 @@
+<h2 class="sign-up">新規登録</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <!--<%= f.label :"名前"%><br />-->
+    <%= f.text_field :name, autofocus: true, class:"field-box", placeholder:"名前" %>
+  </div>
+
+  <div class="field">
+    <!--<%= f.label :"社員番号" %><br />-->
+    <%= f.number_field :staff_num, class:"field-box", placeholder:"社員番号" %>
+  </div>
+
+  <div class="field">
+    <!--<%= f.label :"メールアドレス" %><br />-->
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"field-box", placeholder:"メールアドレス" %>
+  </div>
+
+  <div class="field">
+   <!--<%= f.label :"パスワード" %>-->
+    <% if @minimum_password_length %>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class:"field-box", placeholder:"パスワード(6文字以上)" %>
+  </div>
+
+  <div class="field">
+    <!--<%= f.label :"パスワード再確認" %><br />-->
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"field-box", placeholder:"パスワード再確認" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "新規登録" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

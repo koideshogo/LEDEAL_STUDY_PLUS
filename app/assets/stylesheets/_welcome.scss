@@ -1,0 +1,67 @@
+.top-page-title {
+  color: #2699FB;
+  height: 150px;
+  width: 1414px;
+  background-color: #FFFFFF;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 270px;
+  position: relative;
+  border: solid 1px #000000;
+}
+
+/**擬似要素背景　□×２**/
+.contents-wrapper::before {
+  content:"";
+  height: 500px;
+  width: 500px;
+  background-color: #FFFFFF;
+  position: absolute;
+  z-index: -1;
+  font-weight: bold;
+  border: solid 1px #000000;
+  margin-left: 265px;
+  margin-top: -230px;
+}
+.top-page-title::before {
+  content:"";
+  height: 500px;
+  width: 500px;
+  background-color: #FFFFFF;
+  position: absolute;
+  z-index: -2;
+  font-weight: bold;
+  border: solid 1px #000000;
+  margin-left: 150px;
+  margin-top: -130px;
+}
+
+
+.devise-nav {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+.devise-btn {
+  height: 40px;
+  width: 200px;
+  background-color:#FFFFFF;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 270px;
+  color: #5A5A5A;
+  text-decoration: none;
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+.devise-font {
+  color:  #5A5A5A;
+  text-decoration: none;
+  list-style: none;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LEDEALStudyPlus</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <style type="text/css">
+    body {
+      background-color: #BCE0FD;
+    }
+    </style>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="header">
+    <div class="content-wrapper header-nav">
+      <h1><%= link_to "LEDEAL STUDY PULS", posts_path, class:"company-name"%></h1>
+      <nav>
+        <ul>
+          <li><%= link_to "メーカー",  manufacturers_path, class:"header-list" %></li>
+          <li><%= link_to "商品ランキング", "#", class:"header-list"%></li>
+          <li><%= link_to "社長ブログ", "#", class:"header-list" %></li>
+          <li><%= link_to "メーカー登録", new_manufacturer_path , class:"header-list" %></li>
+          <li><%= link_to "動画投稿", new_post_path ,class:"header-list" %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, class:"header-list", method: :delete %></li>
+        </ul>
+      </nav>
+    </div>
+  </header> 
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
