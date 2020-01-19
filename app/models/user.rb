@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          authentication_keys:  [:name, :staff_num]
          validates :staff_num, uniqueness: true
+         
+  has_many :manufacturers
+  has_many :posts
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
