@@ -1,13 +1,16 @@
-  <section class="new-movie">
-    <h2 class="new-content-title">新着動画</h2>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    
-  <section class="new-movie">
-  
+<%= render 'layouts/nav' %>
+<section class="new-movie">
+  <h2 class="new-content-title">新着動画</h2>
+  <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.body %></td>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</section>
+
 
    
