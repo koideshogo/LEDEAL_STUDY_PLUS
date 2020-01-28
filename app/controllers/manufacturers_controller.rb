@@ -31,7 +31,6 @@ class ManufacturersController < ApplicationController
   def sign_in_user
     redirect_to new_user_session_path unless signed_in?
   end
-  
 
   private
 
