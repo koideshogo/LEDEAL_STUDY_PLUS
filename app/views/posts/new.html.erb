@@ -10,6 +10,9 @@
     <%= form.text_field :title, class:'field-box',placeholder:'動画のタイトル'%>
   </div>
   <div class="field">
+    <%= form.collection_select :manufacturer_id, Manufacturer.all, :id, :name, {prompt: true}, class:'field-box'%>
+  </div>
+  <div class="field">
     <%= form.text_field :youtube_url, class:'field-box',placeholder:'youtubeのURL'%>
   </div>
   <div class="field">
