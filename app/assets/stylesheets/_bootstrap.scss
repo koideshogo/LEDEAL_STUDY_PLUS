@@ -1,0 +1,16 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+html{
+  font-size: 16px;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%; /* IE11バグ対応 */
+}
