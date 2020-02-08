@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_18_074213) do
+ActiveRecord::Schema.define(version: 2020_02_05_142521) do
 
   create_table "manufacturers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_01_18_074213) do
     t.text "body"
     t.string "title"
     t.string "youtube_url"
+    t.bigint "manufacturer_id"
+    t.index ["manufacturer_id"], name: "index_posts_on_manufacturer_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -41,4 +43,5 @@ ActiveRecord::Schema.define(version: 2020_01_18_074213) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "posts", "manufacturers"
 end

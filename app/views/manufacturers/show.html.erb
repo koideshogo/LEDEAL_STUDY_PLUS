@@ -1,2 +1,12 @@
 <%= render 'layouts/nav' %>
+
+<% @manufaturers.each do |post| %>
+  <tr>
+    <td><%= post.body %></td>
+    <iframe class="feature-item" width="100" height="100" src="https://www.youtube.com/embed/<%=post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
 <p><%=link_to "TOP PAGE", posts_path%></p>

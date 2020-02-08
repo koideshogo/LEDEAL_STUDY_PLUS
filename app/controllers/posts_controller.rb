@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :sign_in_user
-  
+
   def index
     @posts = Post.all
   end
@@ -25,7 +25,6 @@ class PostsController < ApplicationController
     end
   end
 
-
   def show
     @post = Post.find(params[:id])
   end
@@ -40,5 +39,5 @@ end
 
 private
   def post_params
-    params.require(:post).permit(:title, :body, :youtube_url)
+    params.require(:post).permit(:title, :body, :youtube_url, :manufacturer_id)
   end

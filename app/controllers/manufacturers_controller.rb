@@ -3,7 +3,6 @@ class ManufacturersController < ApplicationController
 
   def index
     @manufacturers = Manufacturer.all
-
   end
 
   def new
@@ -23,6 +22,9 @@ class ManufacturersController < ApplicationController
   end
 
   def show
+    # @post = Post.where(active: true)
+    manufacturer_foreignKey = Manufacturer.find(params[:id])
+    @manufaturers = Post.where("manufacturer_id = #{manufacturer_foreignKey.id}")
   end
 
   def edit
