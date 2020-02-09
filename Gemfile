@@ -75,3 +75,4 @@ gem 'rails_best_practices', require: false
 gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'kaminari'
+gem 'haml-rails'

@@ -1,0 +1,19 @@
+%h2.log-in ログイン
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field
+    / <haml_loud> f.label :&quot;名前&quot;</haml_loud><br />
+    = f.text_field :name, autofocus: true, class:"field-box", placeholder:"名前"
+  .field
+    / <haml_loud> f.label :&quot;社員番号&quot; </haml_loud><br />
+    = f.number_field :staff_num, class:"field-box", placeholder:"社員番号"
+  /
+    <div class="field">
+    <haml_loud> f.label :&quot;メールアドレス&quot; </haml_loud><br />
+    <haml_loud> f.email_field :email, autofocus: true, autocomplete: &quot;email&quot; </haml_loud>
+    </div>
+  .field
+    / <haml_loud> f.label :&quot;パスワード&quot; </haml_loud><br />
+    = f.password_field :password, autocomplete: "current-password", class:"field-box", placeholder:"パスワード"
+  .actions
+    = f.submit "ログイン"
+= render "devise/shared/links"

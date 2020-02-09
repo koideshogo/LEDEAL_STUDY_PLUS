@@ -1,0 +1,10 @@
+= render 'layouts/nav'
+%h1 メーカー一覧
+- @manufacturers.each do |manufacturer|
+  %section.manufacturer-wrapper
+    %ul
+      %li
+        = link_to manufacturer do
+          %img{:src => "#{manufacturer.image}", :width => "100"}/
+      %li
+        = manufacturer.name
