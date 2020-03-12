@@ -52,3 +52,4 @@ production:
   database: LEDEAL_STUDY_PLUS_production
   username: root
   password: <%= ENV['shogo1026'] %>
+  socket: /var/lib/mysql/mysql.sock
