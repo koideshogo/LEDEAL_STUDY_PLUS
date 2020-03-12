@@ -10,9 +10,12 @@
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
 default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: <%= ENV['shogo1026'] %>
-  socket: /var/lib/mysql/mysql.sock
+  password:
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -47,5 +50,5 @@ test:
 production:
   <<: *default
   database: LEDEAL_STUDY_PLUS_production
-  username: LEDEAL_STUDY_PLUS
-  password: <%= ENV['LEDEAL_STUDY_PLUS_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['shogo1026'] %>
