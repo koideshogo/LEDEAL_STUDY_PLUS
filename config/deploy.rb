@@ -6,7 +6,7 @@ lock '3.12.1'
 set :application, 'LEDEAL_STUDY_PLUS'
 
 # どのリポジトリからアプリをpullするかを指定する
-set :repo_url,  'git@github.com:SHOGO-KOIDE/LEDEAL_STUDY_PLUS.git'
+set :repo_url,  'git@github.com:koideshogo/LEDEAL_STUDY_PLUS.git'
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
