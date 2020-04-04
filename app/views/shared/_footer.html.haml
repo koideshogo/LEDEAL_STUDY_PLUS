@@ -1,0 +1,41 @@
+%footer.footer-wrapper
+  .footer-inner
+    .footer-left
+      %ul.footer-left-nav
+        %li= link_to "トップページ", root_path, class:"footer-left-nav__list"
+        %li= link_to "取扱商品", "#", class:"footer-left-nav__list"
+        %li= link_to "セミナー", "#", class:"footer-left-nav__list"
+        %li= link_to "リンク集", "#", class:"footer-left-nav__list"
+        %li= link_to "会社概要", "#", class:"footer-left-nav__list"
+        %li= link_to "リクルート", "#", class:"footer-left-nav__list"
+        %li= link_to "新規出店サポート", "#", class:"footer-left-nav__list"
+        %li= link_to "LEDEAL通信", "#", class:"footer-left-nav__list"
+        %li= link_to "お問い合わせ", "#", class:"footer-left-nav__list"
+        %li= link_to "ブログ", "#", class:"footer-left-nav__list"
+        %li= link_to "サイトマップ", "#", class:"footer-left-nav__list"
+        %li= link_to "プライバシーポリシー", "#", class:"footer-left-nav__list"
+      .footer-log
+        =link_to image_tag(asset_path("LEDEALLOG.JPG"),alt:'LEDEAL_LOG', size:"170x50"), root_path
+      %ul.footer-sns
+        %li.icon
+          = link_to 'https://www.youtube.com/channel/UCd11OXrMtTb-E2B9tzb75dw/featured', target: :_blank do
+            = fa_icon 'youtube', class:"sns-icon"
+        %li.icon
+          = link_to 'http://instagram.com/ledeal_official', target: :_blank do
+            = fa_icon 'instagram', class:"sns-icon"
+        %li.icon
+          = link_to 'https://www.facebook.com/ledeal.ub.dw', target: :_blank do
+            = fa_icon 'facebook-square', class:"sns-icon"
+        %li.icon
+          = link_to 'http://ledeal.co.jp/president/', target: :_blank do
+            = fa_icon 'book', class:"sns-icon"
+      %p.footer-text
+        関西一円（大阪・神戸・京都・滋賀・奈良・福井・豊岡・福知山・和歌山・鳥取）の美容ディーラー・美容室向け美容材料卸販売会社
+    .footer-right
+      %ul.footer-right-nav
+        %li= link_to "お問い合わせ", "#", class:"footer-right-nav__list"
+        %li= link_to "関西の美容師さん、応援ブログ", "#", class:"footer-right-nav__list"
+        %li= link_to "MIRARERU project", "#", class:"footer-right-nav__list"
+        %li= link_to "求人サイト　JOBOON", "#", class:"footer-right-nav__list"
+  .footer-bottom
+    %p copyright © Ledeal Group Co.,Ltd. All right reserved.
