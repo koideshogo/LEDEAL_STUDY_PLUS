@@ -109,8 +109,6 @@ gem 'font-awesome-rails'
 gem 'font-awesome-sass'
 
 gem 'haml-rails'
-gem 'rails_best_practices', require: false
-gem 'bootstrap-sass'
 gem 'kaminari'
 gem 'sass-rails'
 
