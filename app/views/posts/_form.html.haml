@@ -1,0 +1,19 @@
+= render './shared/header'
+%section.manufacturers
+  .form-wrapper
+    .form-main
+      .post-title
+        = fa_icon 'youtube',class: 'l-video-icon'
+        .post-title__text 動画投稿
+        = fa_icon 'youtube',class: 'l-video-icon'
+      = form_with(model: Post.new,local: true)do|form|
+        .field
+          = form.text_field :title, class:'field-box',placeholder:'動画のタイトル'
+        .field
+          = form.collection_select :manufacturer_id, Manufacturer.all, :id, :name, {prompt: true}, class:'field-box'
+        .field
+          = form.text_field :youtube_url, class:'field-box',placeholder:'youtubeのURL'
+        .field
+          = form.text_area :body, class:'field-box', placeholder:'動画の詳細'
+        .actions
+          = form.submit
