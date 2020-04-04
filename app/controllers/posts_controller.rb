@@ -30,13 +30,13 @@ class PostsController < ApplicationController
 
   def edit
   end
-
-  def sign_in_user
-    redirect_to new_user_session_path unless signed_in?
-  end
 end
 
 private
   def post_params
     params.require(:post).permit(:title, :body, :youtube_url, :manufacturer_id)
+  end
+
+  def sign_in_user
+    redirect_to new_user_session_path unless signed_in?
   end
