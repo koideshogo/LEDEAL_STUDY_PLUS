@@ -17,6 +17,6 @@ Rails.application.routes.draw do
 
   namespace :api, format: 'json' do
     #categoryセレクトボックス で使用
-    resources :categories, only[:index]
+    resources :categories, only: [:index]
   end
 end
