@@ -3,4 +3,5 @@ class Manufacturer < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   belongs_to :user, optional: true
   has_many :posts
+  belongs_to :category
 end
