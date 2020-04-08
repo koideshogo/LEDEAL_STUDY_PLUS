@@ -3,6 +3,7 @@ class InitSchema < ActiveRecord::Migration[5.2]
     create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
       t.string "ancestry"
       t.string :name, null: false
+      t.string "image"
       t.index ["ancestry"], name: "index_categories_on_ancestry"
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
