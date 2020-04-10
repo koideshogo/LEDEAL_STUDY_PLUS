@@ -3,6 +3,7 @@ class ManufacturersController < ApplicationController
 
   def index
     @manufacturers = Manufacturer.all
+    @categories = Category.where(params[:id])
   end
 
   def new
