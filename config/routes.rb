@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'categories/index'
   root 'mains#index'
   get 'mains/index'
   devise_for :users
@@ -14,4 +15,9 @@ Rails.application.routes.draw do
   resources :manufacturers
   get 'manufacturers/:id', to: 'manufacturers#show'
   resources :posts
+
+  namespace :api, format: 'json' do
+    #categoryセレクトボックス で使用
+    resources :categories, only: [:index]
+  end
 end
