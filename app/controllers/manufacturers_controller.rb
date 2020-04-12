@@ -1,9 +1,9 @@
 class ManufacturersController < ApplicationController
   before_action :sign_in_user
+  before_action :set_category, only:[:index, :show]
 
   def index
     @manufacturers = Manufacturer.all
-    @categories = Category.where(params[:id])
   end
 
   def new
@@ -23,9 +23,6 @@ class ManufacturersController < ApplicationController
   end
 
   def show
-    # @post = Post.where(active: true)
-    manufacturer_foreignKey = Manufacturer.find(params[:id])
-    @manufaturers = Post.where("manufacturer_id = #{manufacturer_foreignKey.id}")
   end
 
   def edit
@@ -39,5 +36,9 @@ class ManufacturersController < ApplicationController
 
   def manufacturer_params
     params.require(:manufacturer).permit(:name, :user, :image)
+  end
+
+  def set_category
+    @categories = Category.all
   end
 end

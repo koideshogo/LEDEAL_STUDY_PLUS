@@ -1,10 +1,123 @@
 = render './shared/header'
-%h1 メーカー一覧
-- @categories.each do |category|
-  %section.manufacturer-wrapper
-    %ul
-      %li
-        -# = link_to category do
-        %img{src: "#{category.image}", :width => "100"}/
-      %li
-        = category.name
+.manufacturer-wrapper
+  .manufacturer
+    %h1.l-list メーカー 一覧
+    .manufacturer__inner
+      %h2.l-list-title メーカー(ヘアプロダクツ)
+      %ul.manufacturer__inner--list
+        - @categories.slice(10..40).each do |category|
+          %li.l-list-manufacturer
+            .li-list-min
+              = link_to manufacturer_show_path(category.id), class: 'l-list-a' do
+                %figure.l-list-figu.u-list-figu
+                  %figcaption
+                    .l-list-image.u-list-image
+                      =  image_tag(image_url("#{category.image}"))
+                    %span
+                      = category.name 
+            
+
+      %h2.l-list-title メーカー(化粧品・エステ・メイク)
+      %ul.manufacturer__inner--list
+        - @categories.slice(41..54).each do |category|
+          %li.l-list-manufacturer
+            .li-list-min
+              = link_to manufacturer_show_path(category.id), class: 'l-list-a' do
+                %figure.l-list-figu.u-list-figu
+                  %figcaption
+                    .l-list-image.u-list-image
+                      =  image_tag(image_url("#{category.image}"))
+                    %span
+                      = category.name
+
+      %h2.l-list-title メーカー(ネイル)
+      %ul.manufacturer__inner--list
+        - @categories.slice(55..65).each do |category|
+          %li.l-list-manufacturer
+            .li-list-min
+              = link_to manufacturer_show_path(category.id), class: 'l-list-a' do
+                %figure.l-list-figu.u-list-figu
+                  %figcaption
+                    .l-list-image.u-list-image
+                      =  image_tag(image_url("#{category.image}"))
+                    %span
+                      = category.name 
+
+      %h2.l-list-title メーカー(器具・施工)
+      %ul.manufacturer__inner--list
+        - @categories.slice(66..69).each do |category|
+          %li.l-list-manufacturer
+            .li-list-min
+              = link_to manufacturer_show_path(category.id), class: 'l-list-a' do
+                %figure.l-list-figu.u-list-figu
+                  %figcaption
+                    .l-list-image.u-list-image
+                      =  image_tag(image_url("#{category.image}"))
+                    %span
+                      = category.name 
+
+      %h2.l-list-title メーカー(ウィッグ・増毛)
+      %ul.manufacturer__inner--list
+        - @categories.slice(70..72).each do |category|
+          %li.l-list-manufacturer
+            .li-list-min
+              = link_to manufacturer_show_path(category.id), class: 'l-list-a' do
+                %figure.l-list-figu.u-list-figu
+                  %figcaption
+                    .l-list-image.u-list-image
+                      =  image_tag(image_url("#{category.image}"))
+                    %span
+                      = category.name 
+
+      %h2.l-list-title メーカー(シザー)
+      %ul.manufacturer__inner--list
+        - @categories.slice(73..77).each do |category|
+          %li.l-list-manufacturer
+            .li-list-min
+              = link_to manufacturer_show_path(category.id), class: 'l-list-a' do
+                %figure.l-list-figu.u-list-figu
+                  %figcaption
+                    .l-list-image.u-list-image
+                      =  image_tag(image_url("#{category.image}"))
+                    %span
+                      = category.name 
+
+      %h2.l-list-title 問屋・商社
+      %ul.manufacturer__inner--list
+        - @categories.slice(78..80).each do |category|
+          %li.l-list-manufacturer
+            .li-list-min
+              = link_to manufacturer_show_path(category.id), class: 'l-list-a' do
+                %figure.l-list-figu.u-list-figu
+                  %figcaption
+                    .l-list-image.u-list-image
+                      =  image_tag(image_url("#{category.image}"))
+                    %span
+                      = category.name 
+
+      %h2.l-list-title サロンサポート(販促物・その他)
+      %ul.manufacturer__inner--list
+        - @categories.slice(81..82).each do |category|
+          %li.l-list-manufacturer
+            .li-list-min
+              = link_to manufacturer_show_path(category.id), class: 'l-list-a' do
+                %figure.l-list-figu.u-list-figu
+                  %figcaption
+                    .l-list-image.u-list-image
+                      =  image_tag(image_url("#{category.image}"))
+                    %span
+                      = category.name 
+
+      %h2.l-list-title 出版社
+      %ul.manufacturer__inner--list
+        - @categories.slice(83..90).each do |category|
+          %li.l-list-manufacturer
+            .li-list-min
+              = link_to manufacturer_show_path(category.id), class: 'l-list-a' do
+                %figure.l-list-figu.u-list-figu
+                  %figcaption
+                    .l-list-image.u-list-image
+                      =  image_tag(image_url("#{category.image}"))
+                    %span
+                      = category.name 
+= render './shared/footer'
