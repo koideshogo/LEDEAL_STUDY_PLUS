@@ -1,10 +1,11 @@
 = render './shared/header'
 %h1 メーカー一覧
-- @categories.each do |category|
+- @categories.slice(10..90).each do |category|
   %section.manufacturer-wrapper
     %ul
       %li
-        -# = link_to category do
-        %img{src: "#{category.image}", :width => "100"}/
-      %li
-        = category.name
+        %span
+          = link_to image_tag(image_url("#{category.image}"), calss:'l-list-image'), manufacturer_show_path(category.id)
+        %span
+          = category.name
+= render './shared/footer'

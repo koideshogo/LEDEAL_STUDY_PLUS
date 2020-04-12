@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :restaurants, only: [:index, :new, :create, :show,  :edit, :destroy]
   end
-  resources :manufacturers
-  get 'manufacturers/:id', to: 'manufacturers#show'
+  resources :manufacturers, only: [:index,:new, :create, :edit, :destroy]
+  get 'manufacturers/:id', to: 'manufacturers#show', as: 'manufacturer_show'
   resources :posts
 
   namespace :api, format: 'json' do
