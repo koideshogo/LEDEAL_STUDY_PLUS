@@ -10,7 +10,7 @@
         .field
           = form.text_field :title, class:'field-box',placeholder:'動画のタイトル'
         .field
-          = form.collection_select :manufacturer_id, Manufacturer.all, :id, :name, {prompt: true}, class:'field-box'
+          = form.collection_select :category_id, @mainCategory, :id, :name, prompt: '選択して下さい'
         .field
           = form.text_field :youtube_url, class:'field-box',placeholder:'youtubeのURL'
         .field

@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   before_action :sign_in_user
+  before_action :set_category, only:[:new, :create]
   def index
-    @posts = Post.all
+    @post = Post.all
   end
 
   def new
@@ -10,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    url = params[:post][:youtube_url]
+    url = @post.youtube_url
     url = url.last(11)
     @post.youtube_url = url
     respond_to do|format|
@@ -39,4 +40,8 @@ private
 
   def sign_in_user
     redirect_to new_user_session_path unless signed_in?
+  end
+
+  def set_category
+    @mainCategory = Category.where(ancestry: '1')
   end
