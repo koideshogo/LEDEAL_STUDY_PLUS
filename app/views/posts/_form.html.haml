@@ -6,7 +6,7 @@
         = fa_icon 'youtube',class: 'l-video-icon'
         .post-title__text 動画投稿
         = fa_icon 'youtube',class: 'l-video-icon'
-      = form_with(model: Post.new,local: true)do|form|
+      = form_with(model: @post,local: true)do|form|
         .field
           = form.text_field :title, class:'field-box',placeholder:'動画のタイトル'
         .field

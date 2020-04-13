@@ -35,7 +35,7 @@ end
 
 private
   def post_params
-    params.require(:post).permit(:title, :body, :youtube_url, :manufacturer_id)
+    params.require(:post).permit(:title, :body, :youtube_url, :category_id)
   end
 
   def sign_in_user
