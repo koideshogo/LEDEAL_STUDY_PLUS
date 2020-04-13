@@ -21,22 +21,14 @@ ActiveRecord::Schema.define(version: 2020_04_06_070807) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
-  create_table "manufacturers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "image"
-  end
-
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "body"
     t.string "title"
     t.string "youtube_url"
-    t.bigint "manufacturer_id"
-    t.index ["manufacturer_id"], name: "index_posts_on_manufacturer_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "fk_rails_9b1b26f040"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,5 +47,5 @@ ActiveRecord::Schema.define(version: 2020_04_06_070807) do
     t.index ["staff_num"], name: "index_users_on_staff_num", unique: true
   end
 
-  add_foreign_key "posts", "manufacturers"
+  add_foreign_key "posts", "categories"
 end

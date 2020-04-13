@@ -3,29 +3,9 @@ class ManufacturersController < ApplicationController
   before_action :set_category, only:[:index, :show]
 
   def index
-    @manufacturers = Manufacturer.all
-  end
-
-  def new
-    @manufacturer = Manufacturer.new
-  end
-  def create
-    @manufacturer = Manufacturer.new(manufacturer_params)
-    respond_to do|format|
-      if @manufacturer.save
-        format.html { redirect_to @manufacturer, notice: '登録が完了しました',class:'notice' }
-        format.json { render :show, status: :created, location: @manufacturer }
-      else
-        format.html { render :new }
-        format.json { render json: @manufacturer.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   def show
-  end
-
-  def edit
   end
 
   def sign_in_user
@@ -33,10 +13,6 @@ class ManufacturersController < ApplicationController
   end
 
   private
-
-  def manufacturer_params
-    params.require(:manufacturer).permit(:name, :user, :image)
-  end
 
   def set_category
     @categories = Category.all
