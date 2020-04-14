@@ -8,14 +8,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-  # 以下全て、formatはjsonのみ
-  # 親カテゴリーが選択されたあとに動くアクション
-  def get_category_children
-  end
-  #　子カテゴリーが選択されたあとに動くアクション
-  def get_category_grandchildren
-  end
-
+  
   def create
     @post = Post.new(post_params)
     url = @post.youtube_url
