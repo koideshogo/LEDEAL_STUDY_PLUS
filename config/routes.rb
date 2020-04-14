@@ -12,12 +12,13 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :restaurants, only: [:index, :new, :create, :show,  :edit, :destroy]
   end
+  #manufactuerのパス
   resources :manufacturers, only: [:index,:new, :create, :edit, :destroy]
   get 'manufacturers/:id', to: 'manufacturers#show', as: 'manufacturer_show'
+  #postのパス
   resources :posts
-
   namespace :api, format: 'json' do
-    #categoryセレクトボックス で使用
-    resources :categories, only: [:index]
+  #categoryセレクトボックスで使用
+  resources :categories, only: [:index]
   end
 end
