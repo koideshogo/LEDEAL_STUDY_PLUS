@@ -16,14 +16,9 @@ Rails.application.routes.draw do
   resources :manufacturers, only: [:index,:new, :create, :edit, :destroy]
   get 'manufacturers/:id', to: 'manufacturers#show', as: 'manufacturer_show'
   #postのパス
-  resources :posts, only: [:index, :show, :new, :edit, :destroy, :get_category_children, :get_category_grandchildren] do
-    collection do
-      get :get_category_children
-      get :get_category_grandchildren
-    end
-  end
+  resources :posts
   namespace :api, format: 'json' do
-  #categoryセレクトボックス で使用
+  #categoryセレクトボックスで使用
   resources :categories, only: [:index]
   end
 end
