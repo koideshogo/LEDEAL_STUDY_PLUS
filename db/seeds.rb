@@ -7,17 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #Categoryモデル
-category = Category.create(name: 'すべて')
+# category = Category.create(name: 'すべて')
 ##親カテゴリー
-haircare = category.children.create(name: 'ヘアプロダクツ')
-make = category.children.create(name: 'メーカー（化粧品・エステ・メイク）')
-nail = category.children.create(name: 'メーカー（ネイル）')
-machine = category.children.create(name: 'メーカー（器具・施工）')
-wig = category.children.create(name: 'メーカー（ウィッグ・増毛）')
-sissor = category.children.create(name: 'メーカー（シザー）')
-wholesaler = category.children.create(name: '問屋・商社')
-saport = category.children.create(name: 'サロンサポート（販促物・その他）')
-publisher = category.children.create(name: '出版社')
+haircare = Category.create(name: 'ヘアプロダクツ')
+make = Category.create(name: 'メーカー（化粧品・エステ・メイク）')
+nail = Category.create(name: 'メーカー（ネイル）')
+machine = Category.create(name: 'メーカー（器具・施工）')
+wig = Category.create(name: 'メーカー（ウィッグ・増毛）')
+sissor = Category.create(name: 'メーカー（シザー）')
+wholesaler = Category.create(name: '問屋・商社')
+saport = Category.create(name: 'サロンサポート（販促物・その他）')
+publisher = Category.create(name: '出版社')
 
 ##子カテゴリー
 ###ヘアケアプロダクツ

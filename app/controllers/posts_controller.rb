@@ -8,12 +8,13 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-  
+
   def create
     @post = Post.new(post_params)
     url = @post.youtube_url
     url = url.last(11)
     @post.youtube_url = url
+    @category = Category.find("#{@post.category_id}")
     respond_to do|format|
       if @post.save
         format.html { redirect_to @post, notice:'投稿が完了しました', class:'notice'}
@@ -24,7 +25,7 @@ class PostsController < ApplicationController
       end
     end
   end
-
+  
   def show
     @post = Post.find(params[:id])
   end
