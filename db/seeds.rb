@@ -53,7 +53,7 @@ haircare_mucota = haircare.children.create(name: 'ムコタ（NAKAGAWA)', image:
 haircare_lebel = haircare.children.create(name: 'ルベル', image: open("#{Rails.root}/db/images/lebel.png"))
 haircare_loreal = haircare.children.create(name: 'ロレアルプロフェッショナル', image: open("#{Rails.root}/db/images/loreal.png"))
 ###メーカー（化粧品・エステ・メイク）
-make_awake = category.children.create(name: 'アウェイク', image: open("#{Rails.root}/db/images/awake.png"))
+make_awake = make.children.create(name: 'アウェイク', image: open("#{Rails.root}/db/images/awake.png"))
 make_alexandre = make.children.create(name: 'アレクサンドルドゥ パリ', image: open("#{Rails.root}/db/images/alexandre.png"))
 make_kuonisu = make.children.create(name: 'クオニス（コスメディ製薬）', image: open("#{Rails.root}/db/images/kuonis.png"))
 make_kose = make.children.create(name: 'コーセープロフェッショナル㈱', image: open("#{Rails.root}/db/images/kose.jpg"))
