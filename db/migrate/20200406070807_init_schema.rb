@@ -4,6 +4,7 @@ class InitSchema < ActiveRecord::Migration[5.2]
       t.string "ancestry"
       t.string :name, null: false
       t.string "image"
+      t.references :category, foreign_key: true, index: true, default: nil
       t.index ["ancestry"], name: "index_categories_on_ancestry"
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false

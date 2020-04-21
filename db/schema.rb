@@ -16,9 +16,11 @@ ActiveRecord::Schema.define(version: 2020_04_06_070807) do
     t.string "ancestry"
     t.string "name", null: false
     t.string "image"
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["category_id"], name: "index_categories_on_category_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -47,5 +49,6 @@ ActiveRecord::Schema.define(version: 2020_04_06_070807) do
     t.index ["staff_num"], name: "index_users_on_staff_num", unique: true
   end
 
+  add_foreign_key "categories", "categories"
   add_foreign_key "posts", "categories"
 end
