@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2020_04_06_070807) do
     t.string "title"
     t.string "youtube_url"
     t.bigint "category_id"
+    t.bigint "category1"
+    t.bigint "category2"
     t.index ["category_id"], name: "fk_rails_9b1b26f040"
   end
 
