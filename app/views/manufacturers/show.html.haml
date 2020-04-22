@@ -1,11 +1,10 @@
 = render './shared/header'
-
+- @post.each do |post|
+  %tr
+    %td= post.body
+    %iframe.feature-item{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "100", :src => "https://www.youtube.com/embed/#{post.youtube_url}", :width => "100"}
+    %td= link_to 'Show', post
+    %td= link_to 'Edit', edit_post_path(post)
+    %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+  %p= link_to "TOP PAGE", root_path
 = render './shared/footer'
--# - @manufaturers.each do |post|
--#   %tr
--#     %td= post.body
--#     %iframe.feature-item{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "100", :src => "https://www.youtube.com/embed/#{post.youtube_url}", :width => "100"}
--#     %td= link_to 'Show', post
--#     %td= link_to 'Edit', edit_post_path(post)
--#     %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
--# %p= link_to "TOP PAGE", posts_path

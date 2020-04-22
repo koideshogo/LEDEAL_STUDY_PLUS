@@ -4,6 +4,7 @@ class InitSchema < ActiveRecord::Migration[5.2]
       t.string "ancestry"
       t.string :name, null: false
       t.string "image"
+      t.references :category, foreign_key: true, index: true, default: nil
       t.index ["ancestry"], name: "index_categories_on_ancestry"
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
@@ -15,6 +16,8 @@ class InitSchema < ActiveRecord::Migration[5.2]
       t.string "title"
       t.string "youtube_url"
       t.bigint "category_id"
+      t.bigint "category1"
+      t.bigint "category2"
     end
     create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
       t.string "email", default: "", null: false
