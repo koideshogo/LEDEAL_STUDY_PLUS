@@ -1,12 +1,15 @@
 class PostsController < ApplicationController
   before_action :sign_in_user
-  before_action :set_category, only:[:new, :create]
+  before_action :set_category, only:[:index, :new, :create]
+  before_action :set_post, only:[:show, :edit, :delete]
+  
   def index
     @post = Post.all
   end
 
   def new
     @post = Post.new
+    @parent_categories = Category.where('id < 10')
   end
 
   def create
@@ -14,8 +17,7 @@ class PostsController < ApplicationController
     url = @post.youtube_url
     url = url.last(11)
     @post.youtube_url = url
-    @category = Category.find("#{@post.category_id}")
-    respond_to do|format|
+    respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice:'投稿が完了しました', class:'notice'}
         format.json { render :show, status: :created, location: @post }
@@ -36,7 +38,7 @@ end
 
 private
   def post_params
-    params.require(:post).permit(:title, :body, :youtube_url, :category_id)
+    params.require(:post).permit(:title, :body, :youtube_url, :category_id, :category1, :category2)
   end
 
   def sign_in_user
@@ -44,5 +46,9 @@ private
   end
 
   def set_category
-    @mainCategory = Category.where(ancestry: '1')
+    @mainCategory = Category.where(category_id: nil)
+  end
+
+  def set_post
+    @posts = Post.find(params[:id])
   end

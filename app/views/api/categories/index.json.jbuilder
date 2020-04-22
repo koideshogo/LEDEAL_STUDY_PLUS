@@ -1,3 +1,5 @@
-json.array! @categories do |category|
-  json.extract! category, :id, :name, :ancestry
+json.array! @child_categories.each do |child|
+  json.id child.id
+  json.category_id child.category_id
+  json.name child.name
 end
