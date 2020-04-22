@@ -1,4 +1,6 @@
-class Api::CategoriesController < ApplicationController  
+# frozen_string_literal: true
+
+class Api::CategoriesController < ApplicationController
   def index
     @child_categories = Category.where(id: 10..90)
     @child_categories = Category.where(category_id: params[:keyword])

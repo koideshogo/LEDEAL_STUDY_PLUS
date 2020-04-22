@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class ManufacturersController < ApplicationController
   before_action :sign_in_user
-  before_action :set_category, only:[:index, :show]
-  before_action :set_posts, only:[:index, :show]
+  before_action :set_category, only: %i[index show]
+  before_action :set_posts, only: %i[index show]
   def index
     @categories = Category.all
   end
@@ -17,11 +19,11 @@ class ManufacturersController < ApplicationController
     end
   end
 
-  private
-    def set_category
-      @categories = Category.all
-    end
+private
+def set_category
+  @categories = Category.all
+end
 
-    def set_posts
-      @posts = Post.all
-    end
+def set_posts
+  @posts = Post.all
+end

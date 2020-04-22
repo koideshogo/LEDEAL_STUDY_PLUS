@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.array! @child_categories.each do |child|
   json.id child.id
   json.category_id child.category_id

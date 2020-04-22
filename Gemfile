@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -35,35 +37,35 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  #binding.pryで必要
-  gem 'pry-rails'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # binding.pryで必要
   gem 'pry-byebug'
   gem 'pry-doc'
+  gem 'pry-rails'
   # テスト
-  gem 'rspec-rails'
-  gem 'rails-controller-testing'
   gem 'capybara'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
   # テスト用データ
   gem 'factory_bot_rails', '~> 4.10.0'
   gem 'faker'
   # コーディング規約, bundlerを使用するためfalse
+  gem 'rails_best_practices', require: false
   gem 'rubocop', require: false
   gem 'rubocop-rails_config'
-  gem 'rails_best_practices', require: false
-  #自動デプロイ
+  # 自動デプロイ
   gem 'capistrano'
-  gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -92,7 +94,7 @@ group :tools do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # ログイン機能
 gem 'devise'
@@ -101,8 +103,8 @@ gem 'devise-i18n-views'
 
 # 画像アップロード
 gem 'carrierwave'
-gem 'mini_magick'
 gem 'fog-aws'
+gem 'mini_magick'
 
 # FontAwesome
 gem 'font-awesome-rails'
@@ -115,9 +117,9 @@ gem 'sass-rails'
 # カテゴリの分類
 gem 'ancestry'
 
-#管理者権限で使用
-gem 'rails_admin', '~> 2.0.0.beta'
+# 管理者権限で使用
 gem 'cancancan'
+gem 'rails_admin', '~> 2.0.0.beta'
 
 # jQueryを使用するために必要
 gem 'jquery-rails'

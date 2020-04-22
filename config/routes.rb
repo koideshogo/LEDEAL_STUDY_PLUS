@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'categories/index'
   root 'mains#index'
@@ -8,17 +10,17 @@ Rails.application.routes.draw do
   end
   # 管理者権限path
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :restaurants, only: [:index, :show] 
+  resources :restaurants, only: %i[index show]
   namespace :admin do
-    resources :restaurants, only: [:index, :new, :create, :show,  :edit, :destroy]
+    resources :restaurants, only: %i[index new create show edit destroy]
   end
-  #manufactuerのパス
-  resources :manufacturers, only: [:index,:new, :create, :edit, :destroy]
+  # manufactuerのパス
+  resources :manufacturers, only: %i[index new create edit destroy]
   get 'manufacturers/:id', to: 'manufacturers#show', as: 'manufacturer_show'
-  #postのパス
+  # postのパス
   resources :posts
   namespace :api, format: 'json' do
-  #categoryセレクトボックスで使用
-  resources :categories, only: [:index]
+    # categoryセレクトボックスで使用
+    resources :categories, only: [:index]
   end
 end

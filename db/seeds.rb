@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -6,9 +8,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#Categoryモデル
+# Categoryモデル
 # category = Category.create(name: 'すべて')
-##親カテゴリー
+# #親カテゴリー
 haircare = Category.create(name: 'ヘアプロダクツ')
 make = Category.create(name: 'メーカー（化粧品・エステ・メイク）')
 nail = Category.create(name: 'メーカー（ネイル）')
@@ -19,8 +21,8 @@ wholesaler = Category.create(name: '問屋・商社')
 saport = Category.create(name: 'サロンサポート（販促物・その他）')
 publisher = Category.create(name: '出版社')
 
-##子カテゴリー
-###ヘアケアプロダクツ
+# #子カテゴリー
+# ##ヘアケアプロダクツ
 haircare_adjuvant = haircare.children.create(name: 'アジュバン', image: open("#{Rails.root}/db/images/adjuvant.png"))
 haircare_amatora = haircare.children.create(name: 'アマトラ', image: open("#{Rails.root}/db/images/amatora.png"))
 haircare_arimino = haircare.children.create(name: 'アリミノ', image: open("#{Rails.root}/db/images/arimino.png"))
@@ -52,7 +54,7 @@ haircare_milbon = haircare.children.create(name: 'ミルボン', image: open("#{
 haircare_mucota = haircare.children.create(name: 'ムコタ（NAKAGAWA)', image: open("#{Rails.root}/db/images/mucota.png"))
 haircare_lebel = haircare.children.create(name: 'ルベル', image: open("#{Rails.root}/db/images/lebel.png"))
 haircare_loreal = haircare.children.create(name: 'ロレアルプロフェッショナル', image: open("#{Rails.root}/db/images/loreal.png"))
-###メーカー（化粧品・エステ・メイク）
+# ##メーカー（化粧品・エステ・メイク）
 make_awake = make.children.create(name: 'アウェイク', image: open("#{Rails.root}/db/images/awake.png"))
 make_alexandre = make.children.create(name: 'アレクサンドルドゥ パリ', image: open("#{Rails.root}/db/images/alexandre.png"))
 make_kuonisu = make.children.create(name: 'クオニス（コスメディ製薬）', image: open("#{Rails.root}/db/images/kuonis.png"))
@@ -68,7 +70,7 @@ make_lumielina = make.children.create(name: 'リュミエリーナ', image: open
 make_jc = make.children.create(name: 'JCprogram（自由が丘クリニック)', image: open("#{Rails.root}/db/images/jc.png"))
 make_masa = make.children.create(name: 'MASA', image: open("#{Rails.root}/db/images/masa.png"))
 make_mtg = make.children.create(name: 'MTG', image: open("#{Rails.root}/db/images/mtg.png"))
-###メーカー（ネイル）
+# ##メーカー（ネイル）
 nail_akusentu = nail.children.create(name: 'アクセンツ', image: open("#{Rails.root}/db/images/akusentsu.png"))
 nail_jessica = nail.children.create(name: 'ジェシカ', image: open("#{Rails.root}/db/images/jessica.png"))
 nail_generation = nail.children.create(name: 'ジェレレーション', image: open("#{Rails.root}/db/images/geleration.png"))
@@ -79,30 +81,30 @@ nail_mars = nail.children.create(name: 'マーズデザイン（ジュエリー�
 nail_ibd = nail.children.create(name: 'ibd', image: open("#{Rails.root}/db/images/ibd.png"))
 nail_ezflow = nail.children.create(name: 'EzFlow', image: open("#{Rails.root}/db/images/ezflow.png"))
 nail_opi = nail.children.create(name: 'OPI', image: open("#{Rails.root}/db/images/opi.png"))
-###メーカー（器具・施工）
+# ##メーカー（器具・施工）
 machine_ohiro = machine.children.create(name: '大広製作所', image: open("#{Rails.root}/db/images/ohiro.png"))
 machine_cosmo = machine.children.create(name: 'コスモデザイン', image: open("#{Rails.root}/db/images/cosmo.png"))
 machine_takara = machine.children.create(name: 'タカラベルモント', image: open("#{Rails.root}/db/images/takarabelumont.png"))
 machine_palukey = machine.children.create(name: 'パルッキー', image: open("#{Rails.root}/db/images/parrucchi.png"))
-###メーカー（ウィッグ・増毛）
+# ##メーカー（ウィッグ・増毛）
 wig_felmo = wig.children.create(name: 'フェルモ', image: open("#{Rails.root}/db/images/felmo.png"))
 wig_fontaine = wig.children.create(name: 'フォンテーヌ', image: open("#{Rails.root}/db/images/fontaine.png"))
 wig_leonca = wig.children.create(name: 'レオンカ', image: open("#{Rails.root}/db/images/leonka.png"))
-###メーカー（シザー）
+# ##メーカー（シザー）
 sissor_utsumi = sissor.children.create(name: '内海', image: open("#{Rails.root}/db/images/utsumi.png"))
 sissor_succeed = sissor.children.create(name: 'サクシード', image: open("#{Rails.root}/db/images/succeed.png"))
 sissor_naruto = sissor.children.create(name: 'ナルトシザー', image: open("#{Rails.root}/db/images/naruto.png"))
 sissor_mac = sissor.children.create(name: 'マック,', image: open("#{Rails.root}/db/images/mac.png"))
 sissor_mizutani = sissor.children.create(name: 'ミズタニ', image: open("#{Rails.root}/db/images/mizutani.png"))
-###問屋・商社
+# ##問屋・商社
 wholesaler_takigawa = wholesaler.children.create(name: '滝川', image: open("#{Rails.root}/db/images/takigawa.png"))
 wholesaler_takeda = wholesaler.children.create(name: '武田', image: open("#{Rails.root}/db/images/takeda.png"))
 wholesaler_yamamoto = wholesaler.children.create(name: '山本美材', image: open("#{Rails.root}/db/images/yamamoto.png"))
 wholesaler_tat = wholesaler.children.create(name: 'TAT', image: open("#{Rails.root}/db/images/tat.png"))
-###サロンサポート（販促物・その他）
+# ##サロンサポート（販促物・その他）
 saport_kart = saport.children.create(name: 'ケイアートファクトリー', image: open("#{Rails.root}/db/images/ki.png"))
 saport_souetsu = saport.children.create(name: '創越舎', image: open("#{Rails.root}/db/images/souesu.png"))
-###出版社
+# ##出版社
 publisher_kamishobou = publisher.children.create(name: '髪書房', image: open("#{Rails.root}/db/images/kamishobou.png"))
 publisher_kaminobunkasha = publisher.children.create(name: '髪の文化舎', image: open("#{Rails.root}/db/images/kaminobunkasha.png"))
 publisher_coiff = publisher.children.create(name: 'コワフュ―ル・ド・パリ・ジャポン', image: open("#{Rails.root}/db/images/cowafu.png"))
@@ -111,8 +113,8 @@ publisher_sinbiyou = publisher.children.create(name: '新美容出版', image: o
 publisher_hyakkasou = publisher.children.create(name: '百花草', image: open("#{Rails.root}/db/images/hyakkasou.png"))
 publisher_pureadesu = publisher.children.create(name: 'プレアデスセンター', image: open("#{Rails.root}/db/images/pureadesu.png"))
 
-##孫カテゴリー
-###ヘアケアプロダクツ アジュバン
+# #孫カテゴリー
+# ##ヘアケアプロダクツ アジュバン
 haircare_adjuvant_grand = haircare_adjuvant.children.create(name: 'アルカリ・中性/ファッション')
 haircare_adjuvant_grand = haircare_adjuvant.children.create(name: 'アルカリ・中性/グレイ')
 haircare_adjuvant_grand = haircare_adjuvant.children.create(name: 'マニキュア')
@@ -156,7 +158,7 @@ haircare_adjuvant_grand = haircare_adjuvant.children.create(name: '前処理')
 haircare_adjuvant_grand = haircare_adjuvant.children.create(name: '中間処理')
 haircare_adjuvant_grand = haircare_adjuvant.children.create(name: '後処理')
 
-###ヘアプロダクツ アマトラ
+# ##ヘアプロダクツ アマトラ
 haircare_amatora_grand = haircare_amatora.children.create(name: 'アルカリ・中性/ファッション')
 haircare_amatora_grand = haircare_amatora.children.create(name: 'アルカリ・中性/グレイ')
 haircare_amatora_grand = haircare_amatora.children.create(name: 'マニキュア')
@@ -200,7 +202,7 @@ haircare_amatora_grand = haircare_amatora.children.create(name: '前処理')
 haircare_amatora_grand = haircare_amatora.children.create(name: '中間処理')
 haircare_amatora_grand = haircare_amatora.children.create(name: '後処理')
 
-###ヘアプロダクツ アリミノ
+# ##ヘアプロダクツ アリミノ
 haircare_arimino_grand = haircare_arimino.children.create(name: 'アルカリ・中性/ファッション')
 haircare_arimino_grand = haircare_arimino.children.create(name: 'アルカリ・中性/グレイ')
 haircare_arimino_grand = haircare_arimino.children.create(name: 'マニキュア')
@@ -244,7 +246,7 @@ haircare_arimino_grand = haircare_arimino.children.create(name: '前処理')
 haircare_arimino_grand = haircare_arimino.children.create(name: '中間処理')
 haircare_arimino_grand = haircare_arimino.children.create(name: '後処理')
 
-###ヘアプロダクツ インターコスメ
+# ##ヘアプロダクツ インターコスメ
 haircare_intercosme_grand = haircare_intercosme.children.create(name: 'アルカリ・中性/ファッション')
 haircare_intercosme_grand = haircare_intercosme.children.create(name: 'アルカリ・中性/グレイ')
 haircare_intercosme_grand = haircare_intercosme.children.create(name: 'マニキュア')
@@ -288,7 +290,7 @@ haircare_intercosme_grand = haircare_intercosme.children.create(name: '前処理
 haircare_intercosme_grand = haircare_intercosme.children.create(name: '中間処理')
 haircare_intercosme_grand = haircare_intercosme.children.create(name: '後処理')
 
-###ヘアプロダクツ ウエラ
+# ##ヘアプロダクツ ウエラ
 haircare_wella_grand = haircare_wella.children.create(name: 'アルカリ・中性/ファッション')
 haircare_wella_grand = haircare_wella.children.create(name: 'アルカリ・中性/グレイ')
 haircare_wella_grand = haircare_wella.children.create(name: 'マニキュア')
@@ -332,7 +334,7 @@ haircare_wella_grand = haircare_wella.children.create(name: '前処理')
 haircare_wella_grand = haircare_wella.children.create(name: '中間処理')
 haircare_wella_grand = haircare_wella.children.create(name: '後処理')
 
-###ヘアプロダクツ オーディーパブリック
+# ##ヘアプロダクツ オーディーパブリック
 haircare_odp_grand = haircare_odp.children.create(name: 'アルカリ・中性/ファッション')
 haircare_odp_grand = haircare_odp.children.create(name: 'アルカリ・中性/グレイ')
 haircare_odp_grand = haircare_odp.children.create(name: 'マニキュア')
@@ -376,7 +378,7 @@ haircare_odp_grand = haircare_odp.children.create(name: '前処理')
 haircare_odp_grand = haircare_odp.children.create(name: '中間処理')
 haircare_odp_grand = haircare_odp.children.create(name: '後処理')
 
-###ヘアプロダクツ カペリッチ
+# ##ヘアプロダクツ カペリッチ
 haircare_capellich_grand = haircare_capellich.children.create(name: 'アルカリ・中性/ファッション')
 haircare_capellich_grand = haircare_capellich.children.create(name: 'アルカリ・中性/グレイ')
 haircare_capellich_grand = haircare_capellich.children.create(name: 'マニキュア')
@@ -420,7 +422,7 @@ haircare_capellich_grand = haircare_capellich.children.create(name: '前処理')
 haircare_capellich_grand = haircare_capellich.children.create(name: '中間処理')
 haircare_capellich_grand = haircare_capellich.children.create(name: '後処理')
 
-###ヘアプロダクツ ケラスターゼ
+# ##ヘアプロダクツ ケラスターゼ
 haircare_kerastaase_grand = haircare_kerastaase.children.create(name: 'アルカリ・中性/ファッション')
 haircare_kerastaase_grand = haircare_kerastaase.children.create(name: 'アルカリ・中性/グレイ')
 haircare_kerastaase_grand = haircare_kerastaase.children.create(name: 'マニキュア')
@@ -464,7 +466,7 @@ haircare_kerastaase_grand = haircare_kerastaase.children.create(name: '前処理
 haircare_kerastaase_grand = haircare_kerastaase.children.create(name: '中間処理')
 haircare_kerastaase_grand = haircare_kerastaase.children.create(name: '後処理')
 
-###ヘアプロダクツ ゴールドウェル
+# ##ヘアプロダクツ ゴールドウェル
 haircare_goldwell_grand = haircare_goldwell.children.create(name: 'アルカリ・中性/ファッション')
 haircare_goldwell_grand = haircare_goldwell.children.create(name: 'アルカリ・中性/グレイ')
 haircare_goldwell_grand = haircare_goldwell.children.create(name: 'マニキュア')
@@ -508,7 +510,7 @@ haircare_goldwell_grand = haircare_goldwell.children.create(name: '前処理')
 haircare_goldwell_grand = haircare_goldwell.children.create(name: '中間処理')
 haircare_goldwell_grand = haircare_goldwell.children.create(name: '後処理')
 
-###ヘアプロダクツ 資生堂
+# ##ヘアプロダクツ 資生堂
 haircare_siseido_grand = haircare_siseido.children.create(name: 'アルカリ・中性/ファッション')
 haircare_siseido_grand = haircare_siseido.children.create(name: 'アルカリ・中性/グレイ')
 haircare_siseido_grand = haircare_siseido.children.create(name: 'マニキュア')
@@ -552,7 +554,7 @@ haircare_siseido_grand = haircare_siseido.children.create(name: '前処理')
 haircare_siseido_grand = haircare_siseido.children.create(name: '中間処理')
 haircare_siseido_grand = haircare_siseido.children.create(name: '後処理')
 
-###ヘアプロダクツ シュワルツコフ
+# ##ヘアプロダクツ シュワルツコフ
 haircare_schwarzkopf_grand = haircare_schwarzkopf.children.create(name: 'アルカリ・中性/ファッション')
 haircare_schwarzkopf_grand = haircare_schwarzkopf.children.create(name: 'アルカリ・中性/グレイ')
 haircare_schwarzkopf_grand = haircare_schwarzkopf.children.create(name: 'マニキュア')
@@ -596,7 +598,7 @@ haircare_schwarzkopf_grand = haircare_schwarzkopf.children.create(name: '前処�
 haircare_schwarzkopf_grand = haircare_schwarzkopf.children.create(name: '中間処理')
 haircare_schwarzkopf_grand = haircare_schwarzkopf.children.create(name: '後処理')
 
-###ヘアプロダクツ ジョエルロティ
+# ##ヘアプロダクツ ジョエルロティ
 haircare_joelroty_grand = haircare_joelroty.children.create(name: 'アルカリ・中性/ファッション')
 haircare_joelroty_grand = haircare_joelroty.children.create(name: 'アルカリ・中性/グレイ')
 haircare_joelroty_grand = haircare_joelroty.children.create(name: 'マニキュア')
@@ -640,7 +642,7 @@ haircare_joelroty_grand = haircare_joelroty.children.create(name: '前処理')
 haircare_joelroty_grand = haircare_joelroty.children.create(name: '中間処理')
 haircare_joelroty_grand = haircare_joelroty.children.create(name: '後処理')
 
-###ヘアプロダクツ スタイルクリエイト
+# ##ヘアプロダクツ スタイルクリエイト
 haircare_stylecreate_grand = haircare_stylecreate.children.create(name: 'アルカリ・中性/ファッション')
 haircare_stylecreate_grand = haircare_stylecreate.children.create(name: 'アルカリ・中性/グレイ')
 haircare_stylecreate_grand = haircare_stylecreate.children.create(name: 'マニキュア')
@@ -684,7 +686,7 @@ haircare_stylecreate_grand = haircare_stylecreate.children.create(name: '前処�
 haircare_stylecreate_grand = haircare_stylecreate.children.create(name: '中間処理')
 haircare_stylecreate_grand = haircare_stylecreate.children.create(name: '後処理')
 
-###ヘアプロダクツ デミ
+# ##ヘアプロダクツ デミ
 haircare_demi_grand = haircare_demi.children.create(name: 'アルカリ・中性/ファッション')
 haircare_demi_grand = haircare_demi.children.create(name: 'アルカリ・中性/グレイ')
 haircare_demi_grand = haircare_demi.children.create(name: 'マニキュア')
@@ -728,7 +730,7 @@ haircare_demi_grand = haircare_demi.children.create(name: '前処理')
 haircare_demi_grand = haircare_demi.children.create(name: '中間処理')
 haircare_demi_grand = haircare_demi.children.create(name: '後処理')
 
-###ヘアプロダクツ 中野製薬
+# ##ヘアプロダクツ 中野製薬
 haircare_nakano_grand = haircare_nakano.children.create(name: 'アルカリ・中性/ファッション')
 haircare_nakano_grand = haircare_nakano.children.create(name: 'アルカリ・中性/グレイ')
 haircare_nakano_grand = haircare_nakano.children.create(name: 'マニキュア')
@@ -772,7 +774,7 @@ haircare_nakano_grand = haircare_nakano.children.create(name: '前処理')
 haircare_nakano_grand = haircare_nakano.children.create(name: '中間処理')
 haircare_nakano_grand = haircare_nakano.children.create(name: '後処理')
 
-###ヘアプロダクツ ナッシュ
+# ##ヘアプロダクツ ナッシュ
 haircare_nash_grand = haircare_nash.children.create(name: 'アルカリ・中性/ファッション')
 haircare_nash_grand = haircare_nash.children.create(name: 'アルカリ・中性/グレイ')
 haircare_nash_grand = haircare_nash.children.create(name: 'マニキュア')
@@ -816,7 +818,7 @@ haircare_nash_grand = haircare_nash.children.create(name: '前処理')
 haircare_nash_grand = haircare_nash.children.create(name: '中間処理')
 haircare_nash_grand = haircare_nash.children.create(name: '後処理')
 
-###ヘアプロダクツ ナプラ
+# ##ヘアプロダクツ ナプラ
 haircare_napla_grand = haircare_napla.children.create(name: 'アルカリ・中性/ファッション')
 haircare_napla_grand = haircare_napla.children.create(name: 'アルカリ・中性/グレイ')
 haircare_napla_grand = haircare_napla.children.create(name: 'マニキュア')
@@ -860,7 +862,7 @@ haircare_napla_grand = haircare_napla.children.create(name: '前処理')
 haircare_napla_grand = haircare_napla.children.create(name: '中間処理')
 haircare_napla_grand = haircare_napla.children.create(name: '後処理')
 
-###ヘアプロダクツ グランデックス
+# ##ヘアプロダクツ グランデックス
 haircare_grandex_grand = haircare_grandex.children.create(name: 'アルカリ・中性/ファッション')
 haircare_grandex_grand = haircare_grandex.children.create(name: 'アルカリ・中性/グレイ')
 haircare_grandex_grand = haircare_grandex.children.create(name: 'マニキュア')
@@ -904,7 +906,7 @@ haircare_grandex_grand = haircare_grandex.children.create(name: '前処理')
 haircare_grandex_grand = haircare_grandex.children.create(name: '中間処理')
 haircare_grandex_grand = haircare_grandex.children.create(name: '後処理')
 
-###ヘアプロダクツ ニューウェイ
+# ##ヘアプロダクツ ニューウェイ
 haircare_newway_grand = haircare_newway.children.create(name: 'アルカリ・中性/ファッション')
 haircare_newway_grand = haircare_newway.children.create(name: 'アルカリ・中性/グレイ')
 haircare_newway_grand = haircare_newway.children.create(name: 'マニキュア')
@@ -948,7 +950,7 @@ haircare_newway_grand = haircare_newway.children.create(name: '前処理')
 haircare_newway_grand = haircare_newway.children.create(name: '中間処理')
 haircare_newway_grand = haircare_newway.children.create(name: '後処理')
 
-###ヘアプロダクツ ヌースフィット
+# ##ヘアプロダクツ ヌースフィット
 haircare_nousfit_grand = haircare_nousfit.children.create(name: 'アルカリ・中性/ファッション')
 haircare_nousfit_grand = haircare_nousfit.children.create(name: 'アルカリ・中性/グレイ')
 haircare_nousfit_grand = haircare_nousfit.children.create(name: 'マニキュア')
@@ -992,7 +994,7 @@ haircare_nousfit_grand = haircare_nousfit.children.create(name: '前処理')
 haircare_nousfit_grand = haircare_nousfit.children.create(name: '中間処理')
 haircare_nousfit_grand = haircare_nousfit.children.create(name: '後処理')
 
-###ヘアプロダクツ パシフィック
+# ##ヘアプロダクツ パシフィック
 haircare_pacific_grand = haircare_pacific.children.create(name: 'アルカリ・中性/ファッション')
 haircare_pacific_grand = haircare_pacific.children.create(name: 'アルカリ・中性/グレイ')
 haircare_pacific_grand = haircare_pacific.children.create(name: 'マニキュア')
@@ -1036,7 +1038,7 @@ haircare_pacific_grand = haircare_pacific.children.create(name: '前処理')
 haircare_pacific_grand = haircare_pacific.children.create(name: '中間処理')
 haircare_pacific_grand = haircare_pacific.children.create(name: '後処理')
 
-###ヘアプロダクツ ハホニコ
+# ##ヘアプロダクツ ハホニコ
 haircare_hahoniko_grand = haircare_hahoniko.children.create(name: 'アルカリ・中性/ファッション')
 haircare_hahoniko_grand = haircare_hahoniko.children.create(name: 'アルカリ・中性/グレイ')
 haircare_hahoniko_grand = haircare_hahoniko.children.create(name: 'マニキュア')
@@ -1080,7 +1082,7 @@ haircare_hahoniko_grand = haircare_hahoniko.children.create(name: '前処理')
 haircare_hahoniko_grand = haircare_hahoniko.children.create(name: '中間処理')
 haircare_hahoniko_grand = haircare_hahoniko.children.create(name: '後処理')
 
-###ヘアプロダクツ ピアセラボ
+# ##ヘアプロダクツ ピアセラボ
 haircare_piaselab_grand = haircare_piaselab.children.create(name: 'アルカリ・中性/ファッション')
 haircare_piaselab_grand = haircare_piaselab.children.create(name: 'アルカリ・中性/グレイ')
 haircare_piaselab_grand = haircare_piaselab.children.create(name: 'マニキュア')
@@ -1124,7 +1126,7 @@ haircare_piaselab_grand = haircare_piaselab.children.create(name: '前処理')
 haircare_piaselab_grand = haircare_piaselab.children.create(name: '中間処理')
 haircare_piaselab_grand = haircare_piaselab.children.create(name: '後処理')
 
-###ヘアプロダクツ bex
+# ##ヘアプロダクツ bex
 haircare_bex_grand = haircare_bex.children.create(name: 'アルカリ・中性/ファッション')
 haircare_bex_grand = haircare_bex.children.create(name: 'アルカリ・中性/グレイ')
 haircare_bex_grand = haircare_bex.children.create(name: 'マニキュア')
@@ -1168,7 +1170,7 @@ haircare_bex_grand = haircare_bex.children.create(name: '前処理')
 haircare_bex_grand = haircare_bex.children.create(name: '中間処理')
 haircare_bex_grand = haircare_bex.children.create(name: '後処理')
 
-###ヘアプロダクツ フォヨーレ
+# ##ヘアプロダクツ フォヨーレ
 haircare_fiole_grand = haircare_fiole.children.create(name: 'アルカリ・中性/ファッション')
 haircare_fiole_grand = haircare_fiole.children.create(name: 'アルカリ・中性/グレイ')
 haircare_fiole_grand = haircare_fiole.children.create(name: 'マニキュア')
@@ -1212,7 +1214,7 @@ haircare_fiole_grand = haircare_fiole.children.create(name: '前処理')
 haircare_fiole_grand = haircare_fiole.children.create(name: '中間処理')
 haircare_fiole_grand = haircare_fiole.children.create(name: '後処理')
 
-###ヘアプロダクツ ホーユー
+# ##ヘアプロダクツ ホーユー
 haircare_hoyu_grand = haircare_hoyu.children.create(name: 'アルカリ・中性/ファッション')
 haircare_hoyu_grand = haircare_hoyu.children.create(name: 'アルカリ・中性/グレイ')
 haircare_hoyu_grand = haircare_hoyu.children.create(name: 'マニキュア')
@@ -1256,7 +1258,7 @@ haircare_hoyu_grand = haircare_hoyu.children.create(name: '前処理')
 haircare_hoyu_grand = haircare_hoyu.children.create(name: '中間処理')
 haircare_hoyu_grand = haircare_hoyu.children.create(name: '後処理')
 
-###ヘアプロダクツ ミアン
+# ##ヘアプロダクツ ミアン
 haircare_mian_grand = haircare_mian.children.create(name: 'アルカリ・中性/ファッション')
 haircare_mian_grand = haircare_mian.children.create(name: 'アルカリ・中性/グレイ')
 haircare_mian_grand = haircare_mian.children.create(name: 'マニキュア')
@@ -1300,7 +1302,7 @@ haircare_mian_grand = haircare_mian.children.create(name: '前処理')
 haircare_mian_grand = haircare_mian.children.create(name: '中間処理')
 haircare_mian_grand = haircare_mian.children.create(name: '後処理')
 
-###ヘアプロダクツ ミルボン
+# ##ヘアプロダクツ ミルボン
 haircare_milbon_grand = haircare_milbon.children.create(name: 'アルカリ・中性/ファッション')
 haircare_milbon_grand = haircare_milbon.children.create(name: 'アルカリ・中性/グレイ')
 haircare_milbon_grand = haircare_milbon.children.create(name: 'マニキュア')
@@ -1344,7 +1346,7 @@ haircare_milbon_grand = haircare_milbon.children.create(name: '前処理')
 haircare_milbon_grand = haircare_milbon.children.create(name: '中間処理')
 haircare_milbon_grand = haircare_milbon.children.create(name: '後処理')
 
-###ヘアプロダクツ ムコタ
+# ##ヘアプロダクツ ムコタ
 haircare_mucota_grand = haircare_mucota.children.create(name: 'アルカリ・中性/ファッション')
 haircare_mucota_grand = haircare_mucota.children.create(name: 'アルカリ・中性/グレイ')
 haircare_mucota_grand = haircare_mucota.children.create(name: 'マニキュア')
@@ -1388,7 +1390,7 @@ haircare_mucota_grand = haircare_mucota.children.create(name: '前処理')
 haircare_mucota_grand = haircare_mucota.children.create(name: '中間処理')
 haircare_mucota_grand = haircare_mucota.children.create(name: '後処理')
 
-###ヘアプロダクツ ルベル
+# ##ヘアプロダクツ ルベル
 haircare_lebel_grand = haircare_lebel.children.create(name: 'アルカリ・中性/ファッション')
 haircare_lebel_grand = haircare_lebel.children.create(name: 'アルカリ・中性/グレイ')
 haircare_lebel_grand = haircare_lebel.children.create(name: 'マニキュア')
@@ -1432,8 +1434,7 @@ haircare_lebel_grand = haircare_lebel.children.create(name: '前処理')
 haircare_lebel_grand = haircare_lebel.children.create(name: '中間処理')
 haircare_lebel_grand = haircare_lebel.children.create(name: '後処理')
 
-
-###ヘアプロダクツ ロレアル
+# ##ヘアプロダクツ ロレアル
 haircare_loreal_grand = haircare_loreal.children.create(name: 'アルカリ・中性/ファッション')
 haircare_loreal_grand = haircare_loreal.children.create(name: 'アルカリ・中性/グレイ')
 haircare_loreal_grand = haircare_loreal.children.create(name: 'マニキュア')
@@ -1477,7 +1478,7 @@ haircare_loreal_grand = haircare_loreal.children.create(name: '前処理')
 haircare_loreal_grand = haircare_loreal.children.create(name: '中間処理')
 haircare_loreal_grand = haircare_loreal.children.create(name: '後処理')
 
-###メーカー（化粧品・エステ・メイク） アウェイク
+# ##メーカー（化粧品・エステ・メイク） アウェイク
 make_awake_grand = make_awake.children.create(name: 'スキンケア')
 make_awake_grand = make_awake.children.create(name: 'メイク')
 make_awake_grand = make_awake.children.create(name: 'ポリッシュ')
@@ -1486,7 +1487,7 @@ make_awake_grand = make_awake.children.create(name: 'フット')
 make_awake_grand = make_awake.children.create(name: 'ケア')
 make_awake_grand = make_awake.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク）アレクサンドゥル
+# ##メーカー（化粧品・エステ・メイク）アレクサンドゥル
 make_alexandre_grand = make_alexandre.children.create(name: 'スキンケア')
 make_alexandre_grand = make_alexandre.children.create(name: 'メイク')
 make_alexandre_grand = make_alexandre.children.create(name: 'ポリッシュ')
@@ -1495,7 +1496,7 @@ make_alexandre_grand = make_alexandre.children.create(name: 'フット')
 make_alexandre_grand = make_alexandre.children.create(name: 'ケア')
 make_alexandre_grand = make_alexandre.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） クオニス
+# ##メーカー（化粧品・エステ・メイク） クオニス
 make_kuonisu_grand = make_kuonisu.children.create(name: 'スキンケア')
 make_kuonisu_grand = make_kuonisu.children.create(name: 'メイク')
 make_kuonisu_grand = make_kuonisu.children.create(name: 'ポリッシュ')
@@ -1504,7 +1505,7 @@ make_kuonisu_grand = make_kuonisu.children.create(name: 'フット')
 make_kuonisu_grand = make_kuonisu.children.create(name: 'ケア')
 make_kuonisu_grand = make_kuonisu.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） コーセー
+# ##メーカー（化粧品・エステ・メイク） コーセー
 make_kose_grand = make_kose.children.create(name: 'スキンケア')
 make_kose_grand = make_kose.children.create(name: 'メイク')
 make_kose_grand = make_kose.children.create(name: 'ポリッシュ')
@@ -1513,7 +1514,7 @@ make_kose_grand = make_kose.children.create(name: 'フット')
 make_kose_grand = make_kose.children.create(name: 'ケア')
 make_kose_grand = make_kose.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） シュウウエムラ
+# ##メーカー（化粧品・エステ・メイク） シュウウエムラ
 make_shu_grand = make_shu.children.create(name: 'スキンケア')
 make_shu_grand = make_shu.children.create(name: 'メイク')
 make_shu_grand = make_shu.children.create(name: 'ポリッシュ')
@@ -1522,7 +1523,7 @@ make_shu_grand = make_shu.children.create(name: 'フット')
 make_shu_grand = make_shu.children.create(name: 'ケア')
 make_shu_grand = make_shu.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） セフィーヌ
+# ##メーカー（化粧品・エステ・メイク） セフィーヌ
 make_cefine_grand = make_cefine.children.create(name: 'スキンケア')
 make_cefine_grand = make_cefine.children.create(name: 'メイク')
 make_cefine_grand = make_cefine.children.create(name: 'ポリッシュ')
@@ -1531,7 +1532,7 @@ make_cefine_grand = make_cefine.children.create(name: 'フット')
 make_cefine_grand = make_cefine.children.create(name: 'ケア')
 make_cefine_grand = make_cefine.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） ゾンケ
+# ##メーカー（化粧品・エステ・メイク） ゾンケ
 make_zonke_grand = make_zonke.children.create(name: 'スキンケア')
 make_zonke_grand = make_zonke.children.create(name: 'メイク')
 make_zonke_grand = make_zonke.children.create(name: 'ポリッシュ')
@@ -1540,7 +1541,7 @@ make_zonke_grand = make_zonke.children.create(name: 'フット')
 make_zonke_grand = make_zonke.children.create(name: 'ケア')
 make_zonke_grand = make_zonke.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） ドクター
+# ##メーカー（化粧品・エステ・メイク） ドクター
 make_doctor_grand = make_doctor.children.create(name: 'スキンケア')
 make_doctor_grand = make_doctor.children.create(name: 'メイク')
 make_doctor_grand = make_doctor.children.create(name: 'ポリッシュ')
@@ -1549,7 +1550,7 @@ make_doctor_grand = make_doctor.children.create(name: 'フット')
 make_doctor_grand = make_doctor.children.create(name: 'ケア')
 make_doctor_grand = make_doctor.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） トニーズ
+# ##メーカー（化粧品・エステ・メイク） トニーズ
 make_tonnys_grand = make_tonnys.children.create(name: 'スキンケア')
 make_tonnys_grand = make_tonnys.children.create(name: 'メイク')
 make_tonnys_grand = make_tonnys.children.create(name: 'ポリッシュ')
@@ -1558,7 +1559,7 @@ make_tonnys_grand = make_tonnys.children.create(name: 'フット')
 make_tonnys_grand = make_tonnys.children.create(name: 'ケア')
 make_tonnys_grand = make_tonnys.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） フィトメール
+# ##メーカー（化粧品・エステ・メイク） フィトメール
 make_phytomer_grand = make_phytomer.children.create(name: 'スキンケア')
 make_phytomer_grand = make_phytomer.children.create(name: 'メイク')
 make_phytomer_grand = make_phytomer.children.create(name: 'ポリッシュ')
@@ -1567,7 +1568,7 @@ make_phytomer_grand = make_phytomer.children.create(name: 'フット')
 make_phytomer_grand = make_phytomer.children.create(name: 'ケア')
 make_phytomer_grand = make_phytomer.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） フォーネーション
+# ##メーカー（化粧品・エステ・メイク） フォーネーション
 make_fornation_grand = make_fornation.children.create(name: 'スキンケア')
 make_fornation_grand = make_fornation.children.create(name: 'メイク')
 make_fornation_grand = make_fornation.children.create(name: 'ポリッシュ')
@@ -1576,7 +1577,7 @@ make_fornation_grand = make_fornation.children.create(name: 'フット')
 make_fornation_grand = make_fornation.children.create(name: 'ケア')
 make_fornation_grand = make_fornation.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） リュミエリーナ
+# ##メーカー（化粧品・エステ・メイク） リュミエリーナ
 make_lumielina_grand = make_lumielina.children.create(name: 'スキンケア')
 make_lumielina_grand = make_lumielina.children.create(name: 'メイク')
 make_lumielina_grand = make_lumielina.children.create(name: 'ポリッシュ')
@@ -1585,7 +1586,7 @@ make_lumielina_grand = make_lumielina.children.create(name: 'フット')
 make_lumielina_grand = make_lumielina.children.create(name: 'ケア')
 make_lumielina_grand = make_lumielina.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） 自由が丘クリニック
+# ##メーカー（化粧品・エステ・メイク） 自由が丘クリニック
 make_jc_grand = make_jc.children.create(name: 'スキンケア')
 make_jc_grand = make_jc.children.create(name: 'メイク')
 make_jc_grand = make_jc.children.create(name: 'ポリッシュ')
@@ -1594,7 +1595,7 @@ make_jc_grand = make_jc.children.create(name: 'フット')
 make_jc_grand = make_jc.children.create(name: 'ケア')
 make_jc_grand = make_jc.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） MASA
+# ##メーカー（化粧品・エステ・メイク） MASA
 make_masa_grand = make_masa.children.create(name: 'スキンケア')
 make_masa_grand = make_masa.children.create(name: 'メイク')
 make_masa_grand = make_masa.children.create(name: 'ポリッシュ')
@@ -1603,7 +1604,7 @@ make_masa_grand = make_masa.children.create(name: 'フット')
 make_masa_grand = make_masa.children.create(name: 'ケア')
 make_masa_grand = make_masa.children.create(name: 'その他')
 
-###メーカー（化粧品・エステ・メイク） MTG
+# ##メーカー（化粧品・エステ・メイク） MTG
 make_mtg_grand = make_mtg.children.create(name: 'スキンケア')
 make_mtg_grand = make_mtg.children.create(name: 'メイク')
 make_mtg_grand = make_mtg.children.create(name: 'ポリッシュ')
@@ -1716,48 +1717,48 @@ machine_palukey_grand = machine_palukey.children.create(name: '器具')
 machine_palukey_grand = machine_palukey.children.create(name: 'ビューティーギャラリー')
 machine_palukey_grand = machine_palukey.children.create(name: 'その他')
 
-###メーカー（ウィッグ・増毛） フェルモ
+# ##メーカー（ウィッグ・増毛） フェルモ
 wig_felmo_grand = wig_felmo.children.create(name: '医療用ウィッグ')
 wig_felmo_grand = wig_felmo.children.create(name: 'ウィッグ')
 wig_felmo_grand = wig_felmo.children.create(name: 'カットウィッグ')
 wig_felmo_grand = wig_felmo.children.create(name: 'エクステ')
 wig_felmo_grand = wig_felmo.children.create(name: 'その他')
 
-###メーカー（ウィッグ・増毛） フォンテーヌ
+# ##メーカー（ウィッグ・増毛） フォンテーヌ
 wig_fontaine_grand = wig_fontaine.children.create(name: '医療用ウィッグ')
 wig_fontaine_grand = wig_fontaine.children.create(name: 'ウィッグ')
 wig_fontaine_grand = wig_fontaine.children.create(name: 'カットウィッグ')
 wig_fontaine_grand = wig_fontaine.children.create(name: 'エクステ')
 wig_fontaine_grand = wig_fontaine.children.create(name: 'その他')
 
-###メーカー（ウィッグ・増毛） レオンカ
+# ##メーカー（ウィッグ・増毛） レオンカ
 wig_leonca_grand = wig_leonca.children.create(name: '医療用ウィッグ')
 wig_leonca_grand = wig_leonca.children.create(name: 'ウィッグ')
 wig_leonca_grand = wig_leonca.children.create(name: 'カットウィッグ')
 wig_leonca_grand = wig_leonca.children.create(name: 'エクステ')
 wig_leonca_grand = wig_leonca.children.create(name: 'その他')
 
-###メーカー（シザー）内海
+# ##メーカー（シザー）内海
 sissor_utsumi_grand = sissor_utsumi.children.create(name: 'カットシザー')
 sissor_utsumi_grand = sissor_utsumi.children.create(name: 'セニング')
 sissor_utsumi_grand = sissor_utsumi.children.create(name: 'その他')
 
-###メーカー（シザー）サクシード
+# ##メーカー（シザー）サクシード
 sissor_succeed_grand = sissor_succeed.children.create(name: 'カットシザー')
 sissor_succeed_grand = sissor_succeed.children.create(name: 'セニング')
 sissor_succeed_grand = sissor_succeed.children.create(name: 'その他')
 
-###メーカー（シザー）ナルトシザー
+# ##メーカー（シザー）ナルトシザー
 sissor_naruto_grand = sissor_naruto.children.create(name: 'カットシザー')
 sissor_naruto_grand = sissor_naruto.children.create(name: 'セニング')
 sissor_naruto_grand = sissor_naruto.children.create(name: 'その他')
 
-###メーカー（シザー）マック
+# ##メーカー（シザー）マック
 sissor_mac_grand = sissor_mac.children.create(name: 'カットシザー')
 sissor_mac_grand = sissor_mac.children.create(name: 'セニング')
 sissor_mac_grand = sissor_mac.children.create(name: 'その他')
 
-###メーカー（シザー）水谷
+# ##メーカー（シザー）水谷
 sissor_mizutani_grand = sissor_mizutani.children.create(name: 'カットシザー')
 sissor_mizutani_grand = sissor_mizutani.children.create(name: 'セニング')
 sissor_mizutani_grand = sissor_mizutani.children.create(name: 'その他')
