@@ -20,6 +20,7 @@ class InitSchema < ActiveRecord::Migration[5.2]
       t.bigint 'category_id'
       t.bigint 'category1'
       t.bigint 'category2'
+      t.string 'release_date'
     end
     create_table 'users', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8' do |t|
       t.string 'email', default: '', null: false

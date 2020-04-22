@@ -8,8 +8,10 @@
         = fa_icon 'youtube',class: 'l-video-icon'
       = form_with(model: @post,local: true)do|form|
         .field
-          = form.text_field :title, class:'field-box',placeholder:'動画のタイトル'
+          = form.label :title, '商品名', class:'post-label' 
+          = form.text_field :title, class:'field-box',placeholder:'タイトル'
         .field
+          = form.label :category_id, 'カテゴリ/メーカー/詳細', class:'post-label'
           .select_box.category1.new_category1
             = form.select :category1, options_from_collection_for_select(Category.where('id < 10'), :id, :name)
           .select_box.category2
@@ -17,8 +19,14 @@
           .select_box.category3
             = form.select :category_id, []
         .field
+          = form.label :release_date, '発売日', class:'post-label'
+          .release-date
+            = form.date_field 'release_date'
+        .field
+          = form.label :youtube_url, 'URL', class:'post-label'
           = form.text_field :youtube_url, class:'field-box',placeholder:'youtubeのURL'
         .field
+          = form.label :body, '商品特徴', class:'post-label' 
           = form.text_area :body, class:'field-box', placeholder:'動画の詳細'
         .actions
           = form.submit
