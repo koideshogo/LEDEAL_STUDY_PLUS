@@ -1,8 +1,11 @@
 %section.new-movie
-  %h2.new-content-title 新着動画
-  - @post.each do |post|
-    %tr
-      %td= post.body
-      %iframe.feature-item{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "100", :src => "https://www.youtube.com/embed/#{post.youtube_url}", :width => "100"}
-      %td= link_to 'Show', post
+.main-slider
+  = image_tag"toppageimage.png", size:"100%", class:""
+  = image_tag"toppageimage.png", size:"100%", class:""
+ 
+
+%h2.new-content-title 新着動画
+- @post.each do |post|
+  %iframe.main-slider--movie{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen:  "", frameborder: "0", src: "https://www.youtube.com/embed/#{post.youtube_url}", size:"100x100"}
+
 
