@@ -19,7 +19,6 @@ class PostsController < ApplicationController
     url = @post.youtube_url
     url = url.last(11)
     @post.youtube_url = url
-    binding.pry
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: '投稿が完了しました', class: 'notice' }
