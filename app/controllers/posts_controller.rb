@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     url = @post.youtube_url
     url = url.last(11)
     @post.youtube_url = url
+    binding.pry
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: '投稿が完了しました', class: 'notice' }
@@ -39,7 +40,7 @@ end
 
 private
 def post_params
-  params.require(:post).permit(:title, :body, :youtube_url, :category_id, :category1, :category2)
+  params.require(:post).permit(:title, :body, :youtube_url, :category_id, :category1, :category2, :release_date)
 end
 
 def sign_in_user
