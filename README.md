@@ -8,6 +8,7 @@
 
 # デモ
 <img width="1676" alt="スクリーンショット 2020-04-23 23 15 20" src="https://user-images.githubusercontent.com/56552221/80109697-bd9ed080-85b8-11ea-9226-d1399df44d4a.png"> 
+
  ![f1b6m-hrnrx](https://user-images.githubusercontent.com/56552221/80110832-1327ad00-85ba-11ea-8154-a35fb00a3ed6.gif)
 
  
