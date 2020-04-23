@@ -7,7 +7,9 @@
 その環境を作り出すことによって社員一人ひとりに有意義な時間を過ごして欲しいと思っております。
 
 # デモ
- 
+![Uploading スクリーンショット 2020-04-23 23.15.20.png…]()
+
+ https://gyazo.com/3073d9e23ae56cc0089d3d6d4637bf26
  
 # 特徴
  youtubeとの差別化
@@ -27,30 +29,35 @@
 * Ruby/Rails 5系
 
 # 実装済みの機能
-・ログイン機能
-・動画投稿
-・多階層構造
+* ログイン機能
+* 動画投稿
+* 多階層構造
+* slick
+*　管理者権限
+
 
 # 使用したgem
-・認証機能：devise
-・テンプレートエンジン:haml/sass
-・アプリケーションサーバー:unicorn
-・自動デプロイ:capistrano
-・多階層構造：ancestry
-・管理者権限：rails_admin/cancancan
-・マイグレーション整理：squasher
-・画像関連:carrierwave,mini_magick
-・フォント：font-awesome-sass
+* 認証機能：devise
+* テンプレートエンジン:haml/sass
+* アプリケーションサーバー:unicorn
+* 自動デプロイ:capistrano
+* 多階層構造：ancestry
+* 管理者権限：rails_admin/cancancan
+* マイグレーション整理：squasher
+* 画像関連:carrierwave,mini_magick
+* フォント：font-awesome-sass
 
 # 今後実装したい機能
-・足跡機能
-・動画閲覧をランキング形式
-・新商品のパンフレットPDF化
-・動画投稿後LINE通知
+* 足跡機能
+* 動画閲覧をランキング形式
+* 新商品のパンフレットPDF化
+* 動画投稿後LINE通知
+* いいね機能
+*　コメント機能
 
 # DB構造
-
+![Uploading スクリーンショット 2020-04-23 23.11.46.png…]()
 
  
 
-`
+
