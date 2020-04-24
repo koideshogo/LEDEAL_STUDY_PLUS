@@ -18,4 +18,12 @@ module LEDEALStudyPlus
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+  module App
+    class Application < Rails::Application
+     config.generators do |g|
+       g.helper false
+       g.assets false
+     end
+    end
+  end
 end

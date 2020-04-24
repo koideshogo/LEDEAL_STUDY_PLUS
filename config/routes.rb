@@ -23,4 +23,6 @@ Rails.application.routes.draw do
     # categoryセレクトボックスで使用
     resources :categories, only: [:index]
   end
+  # ゲストログイン
+  resources :guests, only: [:create], as: 'guest_login'
 end
