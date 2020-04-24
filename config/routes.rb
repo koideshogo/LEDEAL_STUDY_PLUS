@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'guests/create'
   get 'categories/index'
   root 'mains#index'
   get 'mains/index'
