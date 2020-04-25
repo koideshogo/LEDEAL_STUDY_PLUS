@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
     url = @post.youtube_url
     url = url.last(11)
     @post.youtube_url = url
@@ -39,7 +40,7 @@ end
 
 private
 def post_params
-  params.require(:post).permit(:title, :body, :youtube_url, :category_id, :category1, :category2, :release_date)
+  params.require(:post).permit(:title, :body, :youtube_url, :category_id, :category1, :category2, :release_date, :user)
 end
 
 def sign_in_user

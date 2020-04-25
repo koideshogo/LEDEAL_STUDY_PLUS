@@ -33,7 +33,9 @@ ActiveRecord::Schema.define(version: 2020_04_06_070807) do
     t.bigint "category1"
     t.bigint "category2"
     t.string "release_date"
+    t.bigint "user_id"
     t.index ["category_id"], name: "fk_rails_9b1b26f040"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -54,4 +56,5 @@ ActiveRecord::Schema.define(version: 2020_04_06_070807) do
 
   add_foreign_key "categories", "categories"
   add_foreign_key "posts", "categories"
+  add_foreign_key "posts", "users"
 end
