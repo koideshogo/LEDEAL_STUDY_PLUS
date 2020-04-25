@@ -12,4 +12,3 @@ class GuestsController < ApplicationController
     flash[:notice] = 'ゲストログインしました'
   end
 end
-

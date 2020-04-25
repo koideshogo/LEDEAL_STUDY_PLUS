@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # postのパス
   resources :posts
   namespace :api, format: 'json' do
-    # categoryセレクトボックスで使用
+  # categoryセレクトボックスで使用
     resources :categories, only: [:index]
   end
   # ゲストログイン
