@@ -12,6 +12,7 @@ class ManufacturersController < ApplicationController
     @posts = Post.all
     # @category_post = Category.eager_load({children: [{children: :posts}, :posts]}, :posts).where(category_id: 1..90)
     @post = Post.where(category2: params[:id])
+    @category = Category.find(params[:id])
   end
 
   def sign_in_user
