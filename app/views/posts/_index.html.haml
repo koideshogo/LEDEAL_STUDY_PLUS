@@ -4,12 +4,16 @@
       .hero__infomation__title
         %p 〜新着情報〜
       .hero__infomation__text
-      - @post.each do |post|
-        = post.created_at.strftime('%Y/%m/%d')
-        =link_to post.title, post
-        %span の動画が更新されました！
-        %br
-        %br
+      - if @post.present?
+        - @post.each do |post|
+          = fa_icon 'location-arrow', class:'l-infomation__icon'
+          = post.created_at.strftime('%Y/%m/%d')
+          =link_to post.title, post
+          %span の動画が更新されました！
+          %br
+          %br
+      - else
+        %p 現在新着動画はありません
   .hero__slider
     = image_tag"toppageimage.png", size:"100%", class:""
     = image_tag"toppageimage.png", size:"100%", class:""
