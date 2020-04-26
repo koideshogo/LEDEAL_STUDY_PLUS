@@ -17,8 +17,18 @@
   .hero__slider
     = image_tag"toppageimage.png", size:"100%", class:""
     = image_tag"toppageimage.png", size:"100%", class:""
-  .hero__content 新着動画
-  - @post.each do |post|
-    %iframe.hero__content__movie{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen:  "", frameborder: "0", src: "https://www.youtube.com/embed/#{post.youtube_url}", size:"100x100"}
-
+  .hero__container 
+    .hero-title
+      %p ~新着動画~
+    .hero-content
+      - @post.each do |post|
+        %ul.hero-content__card
+          %li.hero-content__card__list
+            %iframe.hero-movie{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen:  "", frameborder: "0", src: "https://www.youtube.com/embed/#{post.youtube_url}", size:"100x100"}
+            .hero-content__card__textarea
+              .hero-content__card__textarea__title
+                = post.title
+            .hero-content__card__link
+              .hero-content__card__link__show
+                = link_to '詳細', post
 

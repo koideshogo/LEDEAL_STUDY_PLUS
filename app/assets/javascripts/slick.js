@@ -1,3 +1,4 @@
+//toppage画像部分slick
 $(function(){
   $('.hero__slider').slick({
     autoplay:true,
