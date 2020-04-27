@@ -1,21 +1,21 @@
+# frozen_string_literal: true
+
 crumb :root do
-  link "トップページ", root_path
+  link 'トップページ', root_path
 end
 
 crumb :manufacturers do
-  link "メーカー",  manufacturers_path
+  link 'メーカー', manufacturers_path
 end
 
 crumb :manufacturer_detail do |category|
-  link "#{category.name}", manufacturer_show_path
+  link category.name.to_s, manufacturer_show_path
   parent :manufacturers
 end
 
 crumb :post do
-  link "動画投稿", new_post_path
+  link '動画投稿', new_post_path
 end
-
-
 
 # crumb :projects do
 #   link "Projects", projects_path

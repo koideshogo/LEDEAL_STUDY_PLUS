@@ -126,6 +126,6 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # パンクズリスト使用のために必要
-gem "gretel"
+gem 'gretel'
 # 検索機能実装のために必要
 gem 'ransack'
