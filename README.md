@@ -18,7 +18,9 @@
 # 特徴
  youtubeとの差別化
  * 各カテゴリ（メーカー、商材種類）による分類
+ * youtube限定公開による不便性の解消
  * 管理者による社員の閲覧履歴確認
+
 # 開発環境
 * Git/GitHub
 * Capistrano
@@ -36,7 +38,7 @@
 * 動画投稿
 * 多階層構造
 * slick
-*　管理者権限
+* 管理者権限
 
 
 # 使用したgem
@@ -49,6 +51,7 @@
 * マイグレーション整理：squasher
 * 画像関連:carrierwave,mini_magick
 * フォント：font-awesome-sass
+* パンくずリスト: gretel
 
 # 今後実装したい機能
 * 足跡機能
@@ -56,7 +59,7 @@
 * 新商品のパンフレットPDF化
 * 動画投稿後LINE通知
 * いいね機能
-*　コメント機能
+* コメント機能
 
 # DB構造
 <img width="1303" alt="スクリーンショット 2020-04-23 23 11 46" src="https://user-images.githubusercontent.com/56552221/80109900-0d7d9780-85b9-11ea-8576-fa4b84f19817.png">

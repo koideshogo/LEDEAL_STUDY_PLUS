@@ -20,10 +20,10 @@ module LEDEALStudyPlus
   end
   module App
     class Application < Rails::Application
-     config.generators do |g|
-       g.helper false
-       g.assets false
-     end
+      config.generators do |g|
+        g.helper false
+        g.assets false
+      end
     end
   end
 end

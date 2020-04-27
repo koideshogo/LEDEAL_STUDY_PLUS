@@ -1,4 +1,6 @@
 = render './shared/header'
+- breadcrumb :manufacturers
+= render "./shared/breadcrumbs"
 .manufacturer-wrapper
   .manufacturer
     %h1.l-list メーカー 一覧
@@ -14,8 +16,7 @@
                     .l-list-image.u-list-image
                       =  image_tag(image_url("#{category.image}"))
                     %span
-                      = category.name 
-            
+                      = category.name
 
       %h2.l-list-title メーカー(化粧品・エステ・メイク)
       %ul.manufacturer__inner--list
@@ -41,7 +42,7 @@
                     .l-list-image.u-list-image
                       =  image_tag(image_url("#{category.image}"))
                     %span
-                      = category.name 
+                      = category.name
 
       %h2.l-list-title メーカー(器具・施工)
       %ul.manufacturer__inner--list
@@ -54,7 +55,7 @@
                     .l-list-image.u-list-image
                       =  image_tag(image_url("#{category.image}"))
                     %span
-                      = category.name 
+                      = category.name
 
       %h2.l-list-title メーカー(ウィッグ・増毛)
       %ul.manufacturer__inner--list
@@ -67,7 +68,7 @@
                     .l-list-image.u-list-image
                       =  image_tag(image_url("#{category.image}"))
                     %span
-                      = category.name 
+                      = category.name
 
       %h2.l-list-title メーカー(シザー)
       %ul.manufacturer__inner--list
@@ -80,7 +81,7 @@
                     .l-list-image.u-list-image
                       =  image_tag(image_url("#{category.image}"))
                     %span
-                      = category.name 
+                      = category.name
 
       %h2.l-list-title 問屋・商社
       %ul.manufacturer__inner--list
@@ -93,7 +94,7 @@
                     .l-list-image.u-list-image
                       =  image_tag(image_url("#{category.image}"))
                     %span
-                      = category.name 
+                      = category.name
 
       %h2.l-list-title サロンサポート(販促物・その他)
       %ul.manufacturer__inner--list
@@ -106,7 +107,7 @@
                     .l-list-image.u-list-image
                       =  image_tag(image_url("#{category.image}"))
                     %span
-                      = category.name 
+                      = category.name
 
       %h2.l-list-title 出版社
       %ul.manufacturer__inner--list
@@ -119,5 +120,5 @@
                     .l-list-image.u-list-image
                       =  image_tag(image_url("#{category.image}"))
                     %span
-                      = category.name 
+                      = category.name
 = render './shared/footer'
