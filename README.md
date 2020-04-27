@@ -7,6 +7,9 @@
 その環境を作り出すことによって社員一人ひとりに有意義な時間を過ごして欲しいと思っております。
 
 # デモ
+![4737dc33612903d14a1605ef1bb53b43](https://user-images.githubusercontent.com/56552221/80304752-0fcb3600-87f3-11ea-86ff-946b9b8cf811.gif)
+
+
 <img width="1676" alt="スクリーンショット 2020-04-23 23 15 20" src="https://user-images.githubusercontent.com/56552221/80109697-bd9ed080-85b8-11ea-9226-d1399df44d4a.png"> 
 
  ![f1b6m-hrnrx](https://user-images.githubusercontent.com/56552221/80110832-1327ad00-85ba-11ea-8154-a35fb00a3ed6.gif)
@@ -14,9 +17,8 @@
  
 # 特徴
  youtubeとの差別化
- ・管理者による社員の閲覧履歴確認
- ・各カテゴリ（メーカー、商材種類）による分類
- 
+ * 各カテゴリ（メーカー、商材種類）による分類
+ * 管理者による社員の閲覧履歴確認
 # 開発環境
 * Git/GitHub
 * Capistrano
