@@ -156,6 +156,8 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gretel (3.0.9)
+      rails (>= 3.1.0)
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
@@ -234,6 +236,8 @@ GEM
     parallel (1.19.1)
     parser (2.7.1.0)
       ast (~> 2.4.0)
+    polyamorous (2.3.2)
+      activerecord (>= 5.2.1)
     pry (0.13.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -304,6 +308,11 @@ GEM
     rainbow (3.0.0)
     raindrops (0.19.1)
     rake (13.0.1)
+    ransack (2.3.2)
+      activerecord (>= 5.2.1)
+      activesupport (>= 5.2.1)
+      i18n
+      polyamorous (= 2.3.2)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -437,6 +446,7 @@ DEPENDENCIES
   fog-aws
   font-awesome-rails
   font-awesome-sass
+  gretel
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -453,6 +463,7 @@ DEPENDENCIES
   rails-controller-testing
   rails_admin (~> 2.0.0.beta)
   rails_best_practices
+  ransack
   rspec-rails
   rubocop
   rubocop-rails_config

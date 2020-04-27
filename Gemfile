@@ -124,3 +124,8 @@ gem 'rails_admin', '~> 2.0.0.beta'
 # jQueryを使用するために必要
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+
+# パンクズリスト使用のために必要
+gem "gretel"
+# 検索機能実装のために必要
+gem 'ransack'
