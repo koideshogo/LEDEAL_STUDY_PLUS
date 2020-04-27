@@ -1,4 +1,6 @@
 = render './shared/header'
+- breadcrumb :manufacturer_detail, @category
+= render "./shared/breadcrumbs"
 - if @post.present? 
   .manufacturer-title
     ="#{@category.name}"
