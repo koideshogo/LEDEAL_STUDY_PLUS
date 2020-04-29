@@ -3,17 +3,29 @@
     .nav-left
       .nav-left__log
         =link_to image_tag(asset_path("LEDEALLOGchange.jpg"),alt:'LEDEAL_LOG', size:"134x36"), root_path
-    %nav.nav-right
-      %ul
+    %ul.nav-right
       - if current_user.try(:admin?)
-        %li= link_to "メーカー",  manufacturers_path, class:"header-list"
-        %li= link_to "動画投稿", new_post_path ,class:"header-list"
-        %li= link_to "管理者権限", admin_restaurants_path ,class:"header-list"
-        %li= link_to 'ログアウト', destroy_user_session_path, class:"header-list", method: :delete
+        %li.nav-right__list
+          = link_to "メーカー",  manufacturers_path
+        %li.nav-right__list
+          = link_to "動画投稿", new_post_path
+        %li.nav-right__list
+          = link_to "管理者権限", admin_restaurants_path
+        %li.nav-right__list
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        %li.nav-right__list
+          = render './shared/search_form', class:""
       -elsif user_signed_in?
-        %li= link_to "メーカー",  manufacturers_path, class:"header-list"
-        %li= link_to 'ログアウト', destroy_user_session_path, class:"header-list", method: :delete
+        %li.nav-right__list
+          = link_to "メーカー",  manufacturers_path
+        %li.nav-right__list
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        %li.nav-right__list
+          = render './shared/search_form'
       - else
-        %li= link_to 'ゲストログイン', guest_login_index_path, class:"header-list", method: :post
-        %li= link_to '新規登録',  new_user_registration_path, class:"header-list"
-        %li= link_to 'ログイン',   new_user_session_path, class:"header-list"
+        %li.nav-right__list
+          = link_to 'ゲストログイン', guest_login_index_path, method: :post
+        %li.nav-right__list
+          = link_to '新規登録',  new_user_registration_path
+        %li.nav-right__noleft
+          = link_to 'ログイン',   new_user_session_path
