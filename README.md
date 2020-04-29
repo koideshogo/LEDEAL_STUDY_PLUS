@@ -39,6 +39,7 @@
 * 多階層構造
 * slick
 * 管理者権限
+* 検索機能
 
 
 # 使用したgem
@@ -52,6 +53,7 @@
 * 画像関連:carrierwave,mini_magick
 * フォント：font-awesome-sass
 * パンくずリスト: gretel
+* 検索機能: ransack
 
 # 今後実装したい機能
 * 足跡機能
