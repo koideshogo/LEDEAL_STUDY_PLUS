@@ -8,16 +8,51 @@
     list-style: none
     height: 60px
     .nav-left
+      line-height: 84px
       &__log
-        line-height: 5
         height: 60px
     .nav-right
       display: flex
+      list-style: none
       line-height: 60px
-      .header-list
-        @include font
-        text-decoration: none
-        padding: 10px
-      .header-list:hover
-        color: gray
+      margin: 0
+      width: 1200px
+      &__list
+        a
+          @include font
+          text-decoration: none
+          padding: 10px
+        a:hover
+          color: gray
+      .nav-right__noleft
+        margin-left: 0
+        a
+          @include font
+          text-decoration: none
+          padding: 10px
+        a:hover
+          color: gray
+      &__list:last-child
+        margin-left: auto
+        margin-right: 20px
+        position: relative
+
+      .search-label
+        font-size: 10px
+        color: white
+      .search-field
+        border-radius: 5px
+      .search-field::-webkit-search-cancel-button
+        -webkit-appearance: none
+      .search-field::placeholder
+        font-size: 10px
+        padding-left: 5px
+      .search-btn
+        background: none
+        border: none
+        cursor: pointer
+        position: absolute
+        right: 0
+        top: 20px
+        font-size: 15px
 

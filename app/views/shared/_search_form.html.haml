@@ -1,0 +1,5 @@
+= search_form_for(@search, url: search_path) do |f|
+  = f.label :title_cont, "動画検索", class:"search-label"
+  = f.search_field :title_cont, class:"search-field", placeholder:'商品名を入力してください'
+  = button_tag type: 'submit', class: 'search-btn' do
+    = fa_icon 'search'
