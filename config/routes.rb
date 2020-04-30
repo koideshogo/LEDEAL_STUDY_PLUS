@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'categories/index'
   root 'mains#index'
   get 'mains/index'
   devise_for :users
@@ -29,4 +28,6 @@ Rails.application.routes.draw do
   end
   # ゲストログイン
   resources :guests, only: [:create], as: 'guest_login'
+  # マイページ
+  resources :users, only: [:show], as: 'mypage'
 end
