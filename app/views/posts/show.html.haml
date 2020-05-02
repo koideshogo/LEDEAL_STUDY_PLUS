@@ -15,6 +15,6 @@
         = @category.name
       .show-post__inner-body 説明文
       = @post.body
-
-= link_to 'Back', mains_index_path
+%p.c-top-page.c-top-page--btn
+  = link_to 'TOP PAGE', mains_index_path
 = render './shared/footer'
