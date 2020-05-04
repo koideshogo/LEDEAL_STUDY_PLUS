@@ -1,11 +1,20 @@
 = render './shared/header'
-%p#notice= notice
-%p
-  %strong Body:
-  = @post.body
-%p
-  %strong Youtube url:
-  %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{@post.youtube_url}", :width => "560"}
-= link_to 'Edit', edit_post_path(@post)
-|
-= link_to 'Back', mains_index_path
+.show-container
+  .show-post
+    .show-post__movie
+      %iframe{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", height: "315", src: "https://www.youtube.com/embed/#{@post.youtube_url}", width: "560"}
+    .show-post__inner
+      %span.show-post__inner-title タイトル:
+      = @post.title
+      %br
+      %span.show-post__inner-release 発売日:
+      = @post.release_date
+      .show-post__inner-figure
+        = image_tag(image_url("#{@category.image}")) 
+        .show-post__inner-name 
+        = @category.name
+      .show-post__inner-body 説明文
+      = @post.body
+%p.c-top-page.c-top-page--btn
+  = link_to 'TOP PAGE', mains_index_path
+= render './shared/footer'
