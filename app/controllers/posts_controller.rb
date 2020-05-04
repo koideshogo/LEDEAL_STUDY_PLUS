@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @category = Category.find(params[:id])
+    @category = Category.find_by(id: "#{@post.category2}")
   end
 
   def edit; end
