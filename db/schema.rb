@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_06_070807) do
+ActiveRecord::Schema.define(version: 2020_05_04_002301) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "ancestry"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2020_04_06_070807) do
     t.datetime "updated_at", null: false
     t.index ["ancestry"], name: "index_categories_on_ancestry"
     t.index ["category_id"], name: "index_categories_on_category_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -34,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_04_06_070807) do
     t.bigint "category2"
     t.string "release_date"
     t.bigint "user_id"
+    t.integer "likes_count"
     t.index ["category_id"], name: "fk_rails_9b1b26f040"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

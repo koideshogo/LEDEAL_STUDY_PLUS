@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.all
+    # @like = Like.all
   end
 
   def new
@@ -35,6 +36,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @category = Category.find_by(id: "#{@post.category2}")
+    @like = Like.new
   end
 
   def edit; end

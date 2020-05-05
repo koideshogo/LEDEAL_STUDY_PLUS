@@ -15,6 +15,8 @@
         = @category.name
       .show-post__inner-body 説明文
       = @post.body
+      %span{id: "likes_buttons_#{@post.id}"}
+        = render partial: 'likes/like', locals: { post: @post }
 %p.c-top-page.c-top-page--btn
   = link_to 'TOP PAGE', mains_index_path
 = render './shared/footer'
