@@ -1,30 +1,40 @@
-.header-wrapper
+.l-header
   background-color: #2699FB
   position: relative
-  height: 70pxpx
-  padding: 5px
-  .header-inner
+  height: 70px
+  .l-header-inner
     display: flex
     list-style: none
-    height: 60px
-    .nav-left
+    height: 80px
+    padding: 10px
+    .l-nav-left
       line-height: 84px
       &__log
         height: 60px
-    .nav-right
+    .l-nav-right
       display: flex
       list-style: none
       line-height: 60px
       margin: 0
-      width: 1200px
+      width: 1680px
+      @media (min-width: 0px) and (max-width: 710px) 
+        display: flex
+        flex-wrap: wrap
+        font-size: 5px
+
       &__list
+        @media (min-width: 0px) and (max-width: 710px) 
+          margin-left: 3px
+          margin-top: -25px
         a
           @include font
           text-decoration: none
           padding: 10px
+          @media (min-width: 0px) and (max-width: 710px)
+            padding: 0px
         a:hover
           color: gray
-      .nav-right__noleft
+      .l-nav-right__noleft
         margin-left: 0
         a
           @include font
@@ -36,12 +46,15 @@
         margin-left: auto
         margin-right: 20px
         position: relative
-
+        @media (min-width: 0px) and (max-width: 710px)
+          margin-left: 0px
       .search-label
         font-size: 10px
         color: white
       .search-field
         border-radius: 5px
+        @media (min-width: 0px) and (max-width: 710px)
+          width: 138px
       .search-field::-webkit-search-cancel-button
         -webkit-appearance: none
       .search-field::placeholder
@@ -55,4 +68,12 @@
         right: 0
         top: 20px
         font-size: 15px
+        @media (min-width: 0px) and (max-width: 710px)
+          margin: -25px
+          margin-top: 1px
+  //スマホ幅
+
+      
+      
+
 
