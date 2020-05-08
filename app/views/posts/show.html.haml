@@ -1,19 +1,19 @@
 = render './shared/header'
-.show-container
-  .show-post
-    .show-post__movie
+.p-show-container
+  .p-show-post
+    .p-show-post__movie
       %iframe{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", height: "315", src: "https://www.youtube.com/embed/#{@post.youtube_url}", width: "560"}
-    .show-post__inner
-      %span.show-post__inner-title タイトル:
+    .p-show-post__inner
+      %span.p-show-post__inner-title タイトル:
       = @post.title
       %br
-      %span.show-post__inner-release 発売日:
+      %span.p-show-post__inner-release 発売日:
       = @post.release_date
-      .show-post__inner-figure
+      .p-show-post__inner-figure
         = image_tag(image_url("#{@category.image}")) 
-        .show-post__inner-name 
+        .p-show-post__inner-name 
         = @category.name
-      .show-post__inner-body 説明文
+      .p-show-post__inner-body 説明文
       = @post.body
       %span{id: "likes_buttons_#{@post.id}"}
         = render partial: 'likes/like', locals: { post: @post }
