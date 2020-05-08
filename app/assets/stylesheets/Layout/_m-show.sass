@@ -1,14 +1,16 @@
-.manufacturer-title
+.l-manufacturer-title
   font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif
   font-size: 40px
   text-align: center
   background-color: #9696BA
-.manucaturer-movie__wrapper
+.l-manucaturer-movie__wrapper
   max-width: 1020px
   display: flex
   flex-wrap: wrap
   margin: 0 auto
-  .manufacturer-movie
+  @media (min-width: 0px) and (max-width: 710px)
+    display: table
+  .l-manufacturer-movie
     &__list
       list-style: none
       height: 200px

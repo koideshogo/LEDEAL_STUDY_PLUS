@@ -2,21 +2,21 @@
 - breadcrumb :manufacturer_detail, @category
 = render "./shared/breadcrumbs"
 - if @post.present?
-  .manufacturer-title
+  .l-manufacturer-title
     ="#{@category.name}"
-  .manucaturer-movie__wrapper
+  .l-manucaturer-movie__wrapper
     - @post.each do |post|
-      %ul.manufacturer-movie
-        %li.manufacturer-movie__list
-          .manufacturer-movie__title
+      %ul.l-l-manufacturer-movie
+        %li.l-manufacturer-movie__list
+          .l-manufacturer-movie__title
             = link_to "#{post.title}", post
-          .manufacturer-movie__movie
+          .l-manufacturer-movie__movie
             %iframe.feature-item{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", height: "100", src: "https://www.youtube.com/embed/#{post.youtube_url}", width: "100%"}
-          .manufacturer-movie__name
+          .l-manufacturer-movie__name
             = '商品名:' "#{post.title}"
-          .manufacturer-movie__release
+          .l-manufacturer-movie__release
             ='発売日:'"#{post.release_date}"
-          .manufacturer-movie__show
+          .l-manufacturer-movie__show
             = link_to '詳細', post
 - else
   %p.no-post
