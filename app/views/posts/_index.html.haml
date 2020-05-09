@@ -1,33 +1,38 @@
 .hero
-  .hero__infomation
-    .hero__infomation__box
-      .hero__infomation__title
-        %p 〜新着情報〜
-      .hero__infomation__text
-      - if @post.present?
-        - @post.each do |post|
-          = fa_icon 'location-arrow', class:'l-infomation__icon'
-          = post.created_at.strftime('%Y/%m/%d')
-          =link_to post.title, post
-          %span の動画が更新されました！
-          %br
-          %br
-      - else
-        %p 現在新着動画はありません
+  - if user_signed_in?
+    .hero__infomation
+      .hero__infomation__box
+        .hero__infomation__title
+          %p 〜新着情報〜
+        .hero__infomation__text
+        - if @post.present?
+          - @post.each do |post|
+            = fa_icon 'location-arrow', class:'l-infomation__icon'
+            = post.created_at.strftime('%Y/%m/%d')
+            =link_to post.title, post
+            %span の動画が更新されました！
+            %br
+            %br
+        - else
+          %p 現在新着動画はありません
   .hero__slider
     = image_tag"toppageslidelog.jpg", size:"100%", class:""
     = image_tag"toppageimage.png", size:"100%", class:""
   .hero__container
     .hero-title
       %p ~新着動画~
-    .hero-content
-      - @post.each do |post|
-        %ul.hero-content__card
-          %li.hero-content__card__list
-            %iframe.hero-movie{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen:  "", frameborder: "0", src: "https://www.youtube.com/embed/#{post.youtube_url}", size:"100x100"}
-            .hero-content__card__textarea
-              .hero-content__card__textarea__title
-                = post.title
-            .hero-content__card__link
-              .hero-content__card__link__show
-                = link_to '詳細', post
+    -if user_signed_in?
+      .hero-content
+        - @post.each do |post|
+          %ul.hero-content__card
+            %li.hero-content__card__list
+              %iframe.hero-movie{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen:  "", frameborder: "0", src: "https://www.youtube.com/embed/#{post.youtube_url}", size:"100x100"}
+              .hero-content__card__textarea
+                .hero-content__card__textarea__title
+                  = post.title
+              .hero-content__card__link
+                .hero-content__card__link__show
+                  = link_to '詳細', post
+    - else
+      %p.u-nologin-message
+        ログインしてしてください
