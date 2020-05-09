@@ -1,20 +1,26 @@
-.footer-wrapper
+.l-footer
   background-color:  #2699FB
-  margin: 0 auto
-  padding: 0
-  .footer-inner
-    width: 1000px
+  .l-footer-inner
+    max-width: 1000px
     height: 220px
     margin: 0 auto
     padding: 0
-    .footer-left
-      width: 500px
+    @media screen and (max-width: 1000px)
+      display: table
+    .l-footer-left
       float: left
+      max-width: 500px
+      @media screen and (max-width: 1000px)
+        max-width: 1000px
+        text-align: center
+        flex-wrap: wrap
       &-nav
         list-style: none
         display: flex
         flex-wrap: wrap
         padding: 0
+        @media screen and (max-width: 1000px)
+          justify-content: center
         &__list
           padding: 0
           font-size: 5px
@@ -23,22 +29,27 @@
         &__list::after
           content: "　|　"
           color: white
-      .footer-log
-      .footer-sns
+      .l-footer-log
+      .l-footer-sns
         display: flex
         list-style: none
         padding-left: 0
-        .sns-icon
+        @media screen and (max-width: 1000px)
+          justify-content: center
+        .l-sns-icon
           color: white
         .icon
           padding-right: 15px
           font-size: 25px
-      .footer-text
+      .l-footer-text
         font-size: 10px
         color: white
-    .footer-right
+        margin: 0px
+    .l-footer-right
       width: 500px
       float: left
+      @media screen and (max-width: 1000px)
+        display: none
       &-nav
         padding: 0
         list-style: none
@@ -56,7 +67,7 @@
           background: #9696BA
           transition: 0.5s
           margin: 10px
-  .footer-bottom
+  .l-footer-bottom
     background-color: white
     text-align: center
-    font-size: 10px
+    font-size: 5px
