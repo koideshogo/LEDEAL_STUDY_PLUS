@@ -1,13 +1,15 @@
 .breadcrumbs-list
   padding-left: 15px
   font-size: 10px
-  box-shadow: 0 2px 5px #ccc
+  box-shadow: 0 6px 5px #ccc
   padding: 17px
+  background: $color-gray
+  @include font-black
   &__postlist
 
   a
     text-decoration: none
-    color: black
+    @include font-black
   a:hover
     color:#2699FB 
   .current

@@ -2,7 +2,8 @@
   .l-header-inner
     .l-nav-left
       .l-nav-left__log
-        =link_to image_tag(asset_path("LEDEALLOGchange.jpg"),alt:'LEDEAL_LOG', size:"134x36"), root_path
+        %p 
+          =link_to 'LEDEAL STUDY PLUS', root_path
     %ul.l-nav-right
       - if current_user.try(:admin?)
         %li.l-nav-right__list
