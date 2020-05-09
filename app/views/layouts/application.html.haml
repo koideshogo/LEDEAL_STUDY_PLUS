@@ -8,6 +8,8 @@
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0", :name => "viewport"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', media: 'all'
+    //LOGOフォント読み込み
+    %link{:href => "https://fonts.googleapis.com/css2?family=Anton&display=swap", :rel => "stylesheet"}/
     //スライダー機能CDN読み込み
     %link{ rel: "stylesheet", type: "text/css", href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"}
     = javascript_include_tag 'application', data: { turbolinks: { track: true }}
