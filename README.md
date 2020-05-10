@@ -7,12 +7,10 @@
 その環境を作り出すことによって社員一人ひとりに有意義な時間を過ごして欲しいと思っております。
 
 # デモ
-![README動画](https://user-images.githubusercontent.com/56552221/81490948-12ce2800-92c3-11ea-8d2f-59ca424c8aad.gif)
-
-
 <img width="1678" alt="スクリーンショット 2020-05-10 13 35 40" src="https://user-images.githubusercontent.com/56552221/81491038-11512f80-92c4-11ea-88bf-262e8ed9c3e1.png">
 
 
+![README動画](https://user-images.githubusercontent.com/56552221/81490948-12ce2800-92c3-11ea-8d2f-59ca424c8aad.gif)
 
  
 # 特徴
