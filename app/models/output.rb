@@ -1,4 +1,6 @@
 class Output < ApplicationRecord
-  belongs_to :user_id
-  belongs_to :post_id
+  validates :body, :salon_name, :user_id, :post_id, presence: true
+  validates :user_id && :post_id, uniqueness: true
+  belongs_to :user
+  belongs_to :post
 end

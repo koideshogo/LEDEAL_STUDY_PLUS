@@ -8,7 +8,8 @@ class User < ApplicationRecord
          authentication_keys: %i[name staff_num]
   validates :staff_num, uniqueness: true
   has_many :posts, dependent: :destroy
-  has_many :likes
+  has_many :likes, dependent: :destroy
+  has_many :outputs, dependent: :destroy
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
