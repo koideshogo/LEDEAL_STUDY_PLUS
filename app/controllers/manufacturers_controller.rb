@@ -10,8 +10,7 @@ class ManufacturersController < ApplicationController
 
   def show
     @posts = Post.all
-    # @category_post = Category.eager_load({children: [{children: :posts}, :posts]}, :posts).where(category_id: 1..90)
-    @post = Post.where(category2: params[:id])
+    @post = Post.where(category2: params[:id]).order(created_at: :DESC)
     @category = Category.find(params[:id])
   end
 
