@@ -33,5 +33,6 @@ Rails.application.routes.draw do
   resources :guests, only: [:create], as: 'guest_login'
 
   # outputのパス
+  resources :outputs, only: [:index, :new, :create, :edit, :show]
 
 end
