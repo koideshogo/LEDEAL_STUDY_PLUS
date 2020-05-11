@@ -1,0 +1,12 @@
+= render './shared/header'
+.output-box
+  .output__inner
+    %h1.output__inner-title
+      = @post.title + 'に関するアウトプット'
+    .output__inner-body
+      %h2 アウトプット内容
+      = @out_put.body
+    .output__inner-name 
+      %h2 提案するサロン様
+      = @out_put.salon_name
+= render './shared/footer'

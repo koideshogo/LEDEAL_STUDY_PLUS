@@ -13,10 +13,12 @@
         = image_tag(image_url("#{@category.image}")) 
         .p-show-post__inner-name 
         = @category.name
-      .p-show-post__inner-body 説明文
-      = @post.body
+      .p-show-post__inner-body
+        %p 説明文:
+        = @post.body
       %span{id: "likes_buttons_#{@post.id}"}
         = render partial: 'likes/like', locals: { post: @post }
+= render './outputs/new'
 %p.c-top-page.c-top-page--btn
   = link_to 'TOP PAGE', mains_index_path
 = render './shared/footer'
