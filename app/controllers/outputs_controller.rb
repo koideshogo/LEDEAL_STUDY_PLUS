@@ -20,7 +20,7 @@ class OutputsController < ApplicationController
         @post = Post.find_by(id: "#{@out_put.post_id}")
         @category = Category.find_by(id: "#{@post.category2}")
         @like = Like.new
-        format.html { redirect_to @post }
+        format.html { redirect_to @post, notice: '既に投稿しているか、入力されていない項目があります', class: 'notice'}
         format.json { render json: @out_put.errors, status: :unprocessable_entity}
       end
     end
