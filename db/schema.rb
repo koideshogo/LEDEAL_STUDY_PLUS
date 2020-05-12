@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_002301) do
+ActiveRecord::Schema.define(version: 2020_05_10_054947) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "ancestry"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 2020_05_04_002301) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_likes_on_post_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "outputs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "body"
+    t.text "salon_name"
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_outputs_on_post_id"
+    t.index ["user_id"], name: "index_outputs_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -65,6 +76,8 @@ ActiveRecord::Schema.define(version: 2020_05_04_002301) do
   end
 
   add_foreign_key "categories", "categories"
+  add_foreign_key "outputs", "posts"
+  add_foreign_key "outputs", "users"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
 end

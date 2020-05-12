@@ -18,6 +18,16 @@ class InitSchema < ActiveRecord::Migration[5.2]
       t.index ["post_id"], name: "index_likes_on_post_id"
       t.index ["user_id"], name: "index_likes_on_user_id"
     end
+    create_table "outputs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+      t.text "body"
+      t.text "salon_name"
+      t.bigint "user_id"
+      t.bigint "post_id"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+      t.index ["post_id"], name: "index_outputs_on_post_id"
+      t.index ["user_id"], name: "index_outputs_on_user_id"
+    end
     create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
@@ -49,6 +59,8 @@ class InitSchema < ActiveRecord::Migration[5.2]
       t.index ["staff_num"], name: "index_users_on_staff_num", unique: true
     end
     add_foreign_key "categories", "categories"
+    add_foreign_key "outputs", "posts"
+    add_foreign_key "outputs", "users"
     add_foreign_key "posts", "categories"
     add_foreign_key "posts", "users"
   end
