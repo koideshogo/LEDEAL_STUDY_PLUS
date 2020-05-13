@@ -18,9 +18,11 @@
       max-width: 1020px
       font-weight: bold
       font-size: 10px
-      background-color: #2699FB
+      background-color: $color-black
       color: #fff
       height: 25px
+      @include font-white
+
     a
       text-decoration: none
       color: red
@@ -30,6 +32,7 @@
       text-decoration: underline
     &__text
       padding-top: 5px
+
   &__slider
     margin: 0px auto
     width: 80%
@@ -53,17 +56,21 @@
     .hero-title
       margin: 40px auto
       font-size: 25px
-      background-color: #2699FB
+      background-color: $color-black
       font-weight: bold
       max-width: 500px
       text-align: center
       border-radius: 5px
+      color: white
+      wf-sawarabigothic { font-family: "Sawarabi Gothic"; }
+
   &-content
     display: flex
     max-width: 1020px
     display: flex
     flex-wrap: wrap
     margin: 0 auto
+    justify-content: center
     &__card
       list-style: none
       &__list
@@ -89,6 +96,4 @@
         &__show a 
           text-decoration: none
           color: #2699FB
-          margin: 0 10px
-
-    
+          margin: 0 10px  

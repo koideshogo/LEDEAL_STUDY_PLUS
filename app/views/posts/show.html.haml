@@ -1,11 +1,25 @@
 = render './shared/header'
-%p#notice= notice
-%p
-  %strong Body:
-  = @post.body
-%p
-  %strong Youtube url:
-  %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{@post.youtube_url}", :width => "560"}
-= link_to 'Edit', edit_post_path(@post)
-|
-= link_to 'Back', mains_index_path
+= render './layouts/flash'
+.p-show-container
+  .p-show-post
+    .p-show-post__movie
+      %iframe{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", height: "315", src: "https://www.youtube.com/embed/#{@post.youtube_url}", width: "560"}
+    .p-show-post__inner
+      %span.p-show-post__inner-title タイトル:
+      = @post.title
+      %br
+      %span.p-show-post__inner-release 発売日:
+      = @post.release_date
+      .p-show-post__inner-figure
+        = image_tag(image_url("#{@category.image}")) 
+        .p-show-post__inner-name 
+        = @category.name
+      .p-show-post__inner-body
+        %p 説明文:
+        = @post.body
+      %span{id: "likes_buttons_#{@post.id}"}
+        = render partial: 'likes/like', locals: { post: @post }
+= render './outputs/new'
+%p.c-top-page.c-top-page--btn
+  = link_to 'TOP PAGE', mains_index_path
+= render './shared/footer'

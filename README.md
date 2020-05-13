@@ -7,12 +7,10 @@
 その環境を作り出すことによって社員一人ひとりに有意義な時間を過ごして欲しいと思っております。
 
 # デモ
-![4737dc33612903d14a1605ef1bb53b43](https://user-images.githubusercontent.com/56552221/80304752-0fcb3600-87f3-11ea-86ff-946b9b8cf811.gif)
+<img width="1678" alt="スクリーンショット 2020-05-10 13 35 40" src="https://user-images.githubusercontent.com/56552221/81491038-11512f80-92c4-11ea-88bf-262e8ed9c3e1.png">
 
 
-<img width="1676" alt="スクリーンショット 2020-04-23 23 15 20" src="https://user-images.githubusercontent.com/56552221/80109697-bd9ed080-85b8-11ea-9226-d1399df44d4a.png"> 
-
- ![f1b6m-hrnrx](https://user-images.githubusercontent.com/56552221/80110832-1327ad00-85ba-11ea-8154-a35fb00a3ed6.gif)
+![README動画](https://user-images.githubusercontent.com/56552221/81490948-12ce2800-92c3-11ea-8d2f-59ca424c8aad.gif)
 
  
 # 特徴
@@ -40,6 +38,7 @@
 * slick
 * 管理者権限
 * 検索機能
+* いいね機能
 
 
 # 使用したgem
@@ -60,13 +59,8 @@
 * 動画閲覧をランキング形式
 * 新商品のパンフレットPDF化
 * 動画投稿後LINE通知
-* いいね機能
 * コメント機能
 
 # DB構造
-<img width="1303" alt="スクリーンショット 2020-04-23 23 11 46" src="https://user-images.githubusercontent.com/56552221/80109900-0d7d9780-85b9-11ea-8576-fa4b84f19817.png">
-
-
- 
-
+[LEDEALSTUDYPLUS ER.pdf](https://github.com/koideshogo/LEDEAL_STUDY_PLUS/files/4579335/LEDEALSTUDYPLUS.ER.pdf)
 

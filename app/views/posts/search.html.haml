@@ -1,6 +1,6 @@
 = render './shared/header'
 -if @posts_search.present?
-  = @posts_search.each do |search|
+  - @posts_search.each do |search|
     %ul.hero-content__card
       %li.hero-content__card__list
         %iframe.hero-movie{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen:  "", frameborder: "0", src: "https://www.youtube.com/embed/#{search.youtube_url}", size:"100x100"}
@@ -12,4 +12,5 @@
             = link_to '詳細', search
 -else
   %p 検索結果がありません
+%p.c-top-page.c-top-page--btn
 = render './shared/footer'

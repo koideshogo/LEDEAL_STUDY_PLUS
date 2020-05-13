@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   get 'manufacturers/:id', to: 'manufacturers#show', as: 'manufacturer_show'
 
   # postのパス
-  resources :posts
+  resources :posts do
+    resources :likes, only: [:create, :destroy]
+  end
   get 'search', to: 'posts#search', as: 'search'
   namespace :api, format: 'json' do
     # categoryセレクトボックスで使用
@@ -30,4 +32,8 @@ Rails.application.routes.draw do
   resources :guests, only: [:create], as: 'guest_login'
   # マイページ
   resources :users, only: [:show], as: 'mypage'
+
+  # outputのパス
+  resources :outputs, only: [:index, :new, :create, :edit, :show]
+
 end

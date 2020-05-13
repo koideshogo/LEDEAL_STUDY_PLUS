@@ -1,0 +1,15 @@
+.Outputform-wrapper
+  .Outputform-inner
+    .Outputform-inner__title アウトプット
+    = form_with(model: @out_put, url: outputs_path, local: true, class:'Outputform')do|form|
+      .Outputform-field
+        = form.label :body, 'アウトプット', class:'Outputform-field__label'
+        %br
+        = form.text_area :body, class:'Outputform-field__textarea',placeholder:'動画を視聴して学んだこと'
+      .Outputform-field
+        = form.label :salon_name, '提案サロン', class:'Outputform-field__label'
+        %br
+        = form.text_field :salon_name, class:'Outputform-field__text',placeholder:'提案するサロン名'
+        = form.hidden_field :post_id, value: @post.id
+      .actions
+        = form.submit 'アウトプットする', class:'output-submit'

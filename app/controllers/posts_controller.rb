@@ -2,11 +2,13 @@
 
 class PostsController < ApplicationController
   before_action :sign_in_user
-  before_action :set_category, only: %i[index new create]
+  before_action :set_category, only: %i[index new create show]
   before_action :set_post, only: %i[show edit delete]
+  before_action :set_categories, only: %i[show]
 
   def index
     @post = Post.all
+    # @like = Like.all
   end
 
   def new
@@ -33,6 +35,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @category = Category.find_by(id: "#{@post.category2}")
+    @like = Like.new
   end
 
   def edit; end
@@ -53,4 +57,8 @@ end
 
 def set_post
   @posts = Post.find(params[:id])
+end
+
+def set_categories
+  @categories = Category.all
 end
