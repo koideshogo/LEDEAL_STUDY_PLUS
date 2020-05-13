@@ -27,7 +27,7 @@ class OutputsController < ApplicationController
   end
 
   def show
-    @out_put = Output.find(params[:id])        
+    @out_put = Output.find(params[:id])
     @post = Post.find_by(id: "#{@out_put.post_id}")
     @category = Category.find_by(id: "#{@post.category2}")
   end
