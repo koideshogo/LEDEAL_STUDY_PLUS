@@ -4,10 +4,10 @@
     = current_user.name
     さんのアウトプット一覧
   .mypageContent
-    - @out_put.zip(@post) do |out_put, post|
-      - if out_put.nil?
+    - if @out_puts
+      - @out_puts.each do |out_put|
         = out_put.body
-      - else
-        %p
-          現在アウトプットはありません
+    - else
+      %p
+        現在アウトプットはありません
 = render './shared/footer'
