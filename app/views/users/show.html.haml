@@ -7,6 +7,8 @@
     - if @out_puts
       - @out_puts.each do |out_put|
         = out_put.body
+      - @post.each do |post|
+        = post.title
     - else
       %p
         現在アウトプットはありません

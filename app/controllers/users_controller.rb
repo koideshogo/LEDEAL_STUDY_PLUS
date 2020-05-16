@@ -4,9 +4,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(current_user.id)
     @out_puts = Output.where(user_id: current_user.id)
-    @out_puts.each do |out_put|
-    @posts = Post.where("id= #{out_put.post_id}")
-
+    post_ids = @out_puts.map(&:post_id)
+    @posts = []
+    post_ids.each do |post_id|
+    post = Post.where("id= #{post_id}")
+    @posts << post
+    @post = @posts.flatten
     end
   end
 
