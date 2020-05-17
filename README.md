@@ -6,6 +6,8 @@
 本アプリでは座学から動画学習にすることにより効率的な学習＆学習した内容を自らが情報発信をし共有できる環境を目指しております。
 その環境を作り出すことによって社員一人ひとりに有意義な時間を過ごして欲しいと思っております。
 
+URL:http://ledeal-study-plus.com/
+
 # デモ
 <img width="1678" alt="スクリーンショット 2020-05-10 13 35 40" src="https://user-images.githubusercontent.com/56552221/81491038-11512f80-92c4-11ea-88bf-262e8ed9c3e1.png">
 
@@ -39,6 +41,7 @@
 * 管理者権限
 * 検索機能
 * いいね機能
+* アウトプット機能
 
 
 # 使用したgem
@@ -62,5 +65,6 @@
 * コメント機能
 
 # DB構造
-[LEDEALSTUDYPLUS ER.pdf](https://github.com/koideshogo/LEDEAL_STUDY_PLUS/files/4579335/LEDEALSTUDYPLUS.ER.pdf)
+![LEDEALSTUDYPLUS ER](https://user-images.githubusercontent.com/56552221/82138443-8049fd80-985b-11ea-981e-ae77a132f265.jpeg)
+
 
