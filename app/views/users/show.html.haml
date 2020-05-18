@@ -1,15 +1,35 @@
 = render './shared/header'
-.mypageContainer
-  %h2.mypage-title
+.p-mypageContainer
+  %h2.p-mypage-name
     = current_user.name
     さんのアウトプット一覧
-  .mypageContent
-    - if @out_puts
-      - @out_puts.each do |out_put|
-        = out_put.body
-      - @post.each do |post|
-        = post.title
-    - else
-      %p
-        現在アウトプットはありません
+  %table.p-mypage-box
+    %tr.p-mypage-box__title
+      %th 日付
+      %th 動画名
+      %th アウトプット内容
+    %tr.p-mypage-box__data
+      - if @out_puts.present?
+        - @out_puts.zip(@post) do |out_put, post|
+          %td.p-mypage-date
+            = post.created_at.strftime('%Y/%m/%d')
+          %td.p-mypage-title
+            = link_to "#{post.title}", post
+          %td.p-mypage-body
+            = out_put.body
+        -# - @post.each do |post|
+        -#   %td.p-mypage-date
+        -#     = post.created_at.strftime('%Y/%m/%d')
+        -#   %td.p-mypage-title
+        -#     = link_to "#{post.title}", post
+        -# - @out_puts.each do |out_put|
+        -#   %td.p-mypage-body
+        -#     = out_put.body
+
+        -# - @out_puts.zip(@post) do |out_put, post|
+        -#   = post.created_at.strftime('%Y/%m/%d')
+        -#   = out_put.body
+      - else
+        %p
+          現在アウトプットはありません
 = render './shared/footer'

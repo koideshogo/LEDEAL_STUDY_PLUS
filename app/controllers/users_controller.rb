@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     post_ids.each do |post_id|
     post = Post.where("id= #{post_id}")
     @posts << post
-    @post = @posts.flatten
+    @post = @posts&.flatten
     end
   end
 
