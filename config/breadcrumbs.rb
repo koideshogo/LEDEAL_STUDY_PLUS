@@ -17,6 +17,12 @@ crumb :post do
   link '動画投稿', new_post_path
 end
 
+crumb :user do
+  link 'マイページ', mypage_path(current_user.id)
+end
+
+
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

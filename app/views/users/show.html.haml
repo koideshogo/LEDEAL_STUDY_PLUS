@@ -1,4 +1,6 @@
 = render './shared/header'
+- breadcrumb :user
+= render "./shared/breadcrumbs"
 .p-mypageContainer
   %h2.p-mypage-name
     = current_user.name
