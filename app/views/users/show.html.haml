@@ -3,20 +3,24 @@
   %h2.p-mypage-name
     = current_user.name
     さんのアウトプット一覧
-  %table.p-mypage-box
-    %tr.p-mypage-box__title
-      %th 日付
-      %th 動画名
-      %th アウトプット内容
-    %tr.p-mypage-box__data
+  .p-mypage-box
+    .p-mypage-upperbox
+      .p-mypage-upperbox__date
+        日付
+      .p-mypage-upperbox__name
+        動画名
+      .p-mypage-upperbox__body
+        アウトプット内容
+    .p-mypage-underbox
       - if @out_puts.present?
         - @out_puts.zip(@post) do |out_put, post|
-          %td.p-mypage-date
-            = post.created_at.strftime('%Y/%m/%d')
-          %td.p-mypage-title
-            = link_to "#{post.title}", post
-          %td.p-mypage-body
-            = out_put.body
+          .p-mypage-content
+            .p-mypage-date
+              = post.created_at.strftime('%Y/%m/%d')
+            .p-mypage-title
+              = link_to "#{post.title}", post
+            .p-mypage-body
+              = out_put.body
         -# - @post.each do |post|
         -#   %td.p-mypage-date
         -#     = post.created_at.strftime('%Y/%m/%d')

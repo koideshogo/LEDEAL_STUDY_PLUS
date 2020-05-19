@@ -6,23 +6,32 @@
     margin: 0 auto
     border-collapse: collapse
     border-spacing: 0
-    width: 355px
-    overflow-wrap: break-word
-    &__title
+    width: 400px
+    .p-mypage-upperbox
       border-bottom: solid 1px #eee
-    &__data
-      width: 355px
-      .p-mypage-date
-        padding: 10px
-      .p-mypage-title
-        padding: 10px
-        a
-          text-decoration: none
-          @include font-black
-          font-size: 15px
-        a:hover
-          color: $color-gray
-      .p-mypage-body
-        padding: 10px
-
-    
+      display: flex
+      &__date
+        padding: 0 50px
+      &__name
+        padding: 0 10px
+      &__body
+        padding: 0 25px
+    .p-mypage-underbox
+      .p-mypage-content
+        display: flex
+        .p-mypage-date
+          padding: 10px
+        .p-mypage-title
+          padding: 10px
+          a
+            text-decoration: none
+            @include font-black
+            font-size: 15px
+          a:hover
+            color: $color-gray
+        .p-mypage-body
+          padding: 10px
+          text-overflow: ellipsis
+          white-space: nowrap
+          overflow: hidden
+          width: 100px
