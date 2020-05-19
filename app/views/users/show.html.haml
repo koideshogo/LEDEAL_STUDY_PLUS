@@ -16,7 +16,7 @@
         - @out_puts.zip(@post) do |out_put, post|
           .p-mypage-content
             .p-mypage-date
-              = post.created_at.strftime('%Y/%m/%d')
+              = out_put.created_at.strftime('%Y/%m/%d')
             .p-mypage-title
               = link_to "#{post.title}", post
             .p-mypage-body
