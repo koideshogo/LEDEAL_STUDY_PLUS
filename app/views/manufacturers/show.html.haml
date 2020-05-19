@@ -18,9 +18,12 @@
             ='発売日:'"#{post.release_date}"
           .l-manufacturer-movie__show
             = link_to '詳細', post
+
 - else
   %p.no-post
     このメーカーには動画が投稿されていません
+.c-pagenate
+  = paginate @post
 %p.c-top-page.c-top-page--btn
   = link_to "TOP PAGE", root_path
 = render './shared/footer'
