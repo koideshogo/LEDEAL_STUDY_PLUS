@@ -1,16 +1,20 @@
 = render './shared/header'
--if @posts_search.present?
-  - @posts_search.each do |search|
-    %ul.hero-content__card
-      %li.hero-content__card__list
-        %iframe.hero-movie{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen:  "", frameborder: "0", src: "https://www.youtube.com/embed/#{search.youtube_url}", size:"100x100"}
-        .hero-content__card__textarea
-          .hero-content__card__textarea__title
-            = search.title
-        .hero-content__card__link
-          .hero-content__card__link__show
-            = link_to '詳細', search
--else
-  %p 検索結果がありません
+.hero-content
+  -if @posts_search.present?
+    - @posts_search.each do |search|
+      %ul.hero-content__card
+        %li.hero-content__card__list
+          %iframe.hero-movie{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen:  "", frameborder: "0", src: "https://www.youtube.com/embed/#{search.youtube_url}", size:"100x100"}
+          .hero-content__card__textarea
+            .hero-content__card__textarea__title
+              = search.title
+          .hero-content__card__link
+            .hero-content__card__link__show
+              = link_to '詳細', search
+  -else
+    %p 検索結果がありません
+.c-pagenate
+  = paginate @posts_search
 %p.c-top-page.c-top-page--btn
+  = link_to "TOP PAGE", root_path
 = render './shared/footer'
