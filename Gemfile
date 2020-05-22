@@ -129,3 +129,5 @@ gem 'jquery-ui-rails'
 gem 'gretel'
 # 検索機能実装のために必要
 gem 'ransack'
+# スクレイピング(ランキング取得)
+gem 'mechanize'
