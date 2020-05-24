@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-server '18.182.105.249', user: 'ec2-user', roles: %w[app db web]
+server '54.64.134.209', user: 'ec2-user', roles: %w[app db web]
