@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_054947) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name", null: false
+    t.string "name", default: "", null: false
     t.integer "staff_num", null: false
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
