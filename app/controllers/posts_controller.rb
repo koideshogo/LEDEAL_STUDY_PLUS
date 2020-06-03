@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @category = Category.find_by(id: "#{@post.category2}")
+    @category = Category.find_by(id: @post.category2.to_s)
     @like = Like.new
   end
 

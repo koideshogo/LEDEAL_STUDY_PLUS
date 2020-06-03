@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 class OutputsController < ApplicationController
   before_action :sign_in_user
   before_action :set_categories, only: %i[show create]
 
-  def index
-  end
+  def index; end
 
   def new
     @out_put = Output.new
@@ -14,26 +15,25 @@ class OutputsController < ApplicationController
     @out_put.user = current_user
     respond_to do |format|
       if @out_put.save
-        format.html { redirect_to @out_put, notice: '投稿が完了しました', class: 'notice'}
+        format.html { redirect_to @out_put, notice: '投稿が完了しました', class: 'notice' }
         format.json { render :show, status: :created, location: @out_put }
       else
-        @post = Post.find_by(id: "#{@out_put.post_id}")
-        @category = Category.find_by(id: "#{@post.category2}")
+        @post = Post.find_by(id: @out_put.post_id.to_s)
+        @category = Category.find_by(id: @post.category2.to_s)
         @like = Like.new
-        format.html { redirect_to @post, notice: '既に投稿しているか、入力されていない項目があります', class: 'notice'}
-        format.json { render json: @out_put.errors, status: :unprocessable_entity}
+        format.html { redirect_to @post, notice: '既に投稿しているか、入力されていない項目があります', class: 'notice' }
+        format.json { render json: @out_put.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def show
     @out_put = Output.find(params[:id])
-    @post = Post.find_by(id: "#{@out_put.post_id}")
-    @category = Category.find_by(id: "#{@post.category2}")
+    @post = Post.find_by(id: @out_put.post_id.to_s)
+    @category = Category.find_by(id: @post.category2.to_s)
   end
 
-  def edit
-  end
+  def edit; end
 
   private
 

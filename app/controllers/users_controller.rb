@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :sign_in_user
   before_action :set_categories, only: %i[show]
@@ -7,9 +9,9 @@ class UsersController < ApplicationController
     post_ids = @out_puts.map(&:post_id)
     @posts = []
     post_ids.each do |post_id|
-    post = Post.where("id= #{post_id}")
-    @posts << post
-    @post = @posts&.flatten
+      post = Post.where("id= #{post_id}")
+      @posts << post
+      @post = @posts&.flatten
     end
   end
 
