@@ -21,8 +21,6 @@ crumb :user do
   link 'マイページ', mypage_path(current_user.id)
 end
 
-
-
 # crumb :projects do
 #   link "Projects", projects_path
 # end

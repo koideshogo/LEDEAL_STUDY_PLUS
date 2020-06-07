@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :output do
-    body "MyText"
-    salon_name "MyText"
-    user_id nil
-    post_id nil
+    body 'MyText'
+    salon_name 'MyText'
+    user
+    post
   end
 end

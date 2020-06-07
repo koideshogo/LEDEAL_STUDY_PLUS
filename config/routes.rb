@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  
+
   # 管理者権限path
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :restaurants, only: %i[index show]
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   # postのパス
   resources :posts do
-    resources :likes, only: [:create, :destroy]
+    resources :likes, only: %i[create destroy]
   end
   get 'search', to: 'posts#search', as: 'search'
   namespace :api, format: 'json' do
@@ -34,6 +34,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show], as: 'mypage'
 
   # outputのパス
-  resources :outputs, only: [:index, :new, :create, :edit, :show]
-
+  resources :outputs, only: %i[index new create edit show]
 end

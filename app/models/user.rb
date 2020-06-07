@@ -6,7 +6,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          authentication_keys: %i[name staff_num]
-  validates :staff_num, uniqueness: true
+  validates :staff_num, uniqueness: true, presence: true
+  validates :name, presence: true
+  validates :email, presence: true
+
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :outputs, dependent: :destroy

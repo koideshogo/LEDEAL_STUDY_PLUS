@@ -6,7 +6,7 @@
 本アプリでは座学から動画学習にすることにより効率的な学習＆学習した内容を自らが情報発信をし共有できる環境を目指しております。
 その環境を作り出すことによって社員一人ひとりに有意義な時間を過ごして欲しいと思っております。
 
-URL:http://ledeal-study-plus.com/
+URL:https://ledeal-study-plus.com/
 
 # デモ
 <img width="1678" alt="スクリーンショット 2020-05-10 13 35 40" src="https://user-images.githubusercontent.com/56552221/81491038-11512f80-92c4-11ea-88bf-262e8ed9c3e1.png">
@@ -20,11 +20,18 @@ URL:http://ledeal-study-plus.com/
  * 各カテゴリ（メーカー、商材種類）による分類
  * youtube限定公開による不便性の解消
  * 管理者による社員の閲覧履歴確認
+ * 動画閲覧後のアウトプット(何処の美容室にどう活かすことができるか)
 
 # 開発環境
 * Git/GitHub
 * Capistrano
 * Rubocop/rails_best_practices
+
+# インフラ
+* EC2
+* Nginx
+* Unicorn
+* Let's Encrypted
 
 # フロントエンド
 * haml/sass
@@ -42,6 +49,7 @@ URL:http://ledeal-study-plus.com/
 * 検索機能
 * いいね機能
 * アウトプット機能
+* マイページ（アウトプット一覧）
 
 
 # 使用したgem
