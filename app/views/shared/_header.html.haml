@@ -6,6 +6,27 @@
           =link_to 'LEDEAL STUDY PLUS', root_path
     %ul.l-nav-right
       - if current_user.try(:admin?)
+        #nav-drawer
+          %input#nav-input.nav-unshown{type: "checkbox"}
+          %label#nav-open{:for => "nav-input"}
+          %span
+          %label#nav-close{for: "nav-input"}
+          #nav-content
+            %ul.l-nav-right--hum
+              %li.l-nav-right__list--hum
+                =link_to 'TOP PAGE', root_path
+              %li.l-nav-right__list--hum
+                = link_to "メーカー(投稿一覧)",  manufacturers_path
+              %li.l-nav-right__list--hum
+                = link_to "動画投稿", new_post_path
+              %li.l-nav-right__list--hum
+                = link_to "管理者権限", admin_restaurants_path
+              %li.l-nav-right__list--hum
+                = link_to 'マイページ', mypage_path(current_user.id)
+              %li.l-nav-right__list--hum
+                = link_to 'ログアウト', destroy_user_session_path, method: :delete
+              %li.l-nav-right__list--hum
+                = render './shared/search_form'
         %li.l-nav-right__list
           = link_to "メーカー(投稿一覧)",  manufacturers_path
         %li.l-nav-right__list
@@ -18,6 +39,7 @@
           = link_to 'ログアウト', destroy_user_session_path, method: :delete
         %li.l-nav-right__list
           = render './shared/search_form'
+
       -elsif user_signed_in?
         %li.l-nav-right__list
           = link_to "メーカー(投稿一覧)",  manufacturers_path
