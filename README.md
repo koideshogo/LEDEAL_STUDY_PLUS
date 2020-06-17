@@ -50,6 +50,7 @@ URL:https://ledeal-study-plus.com/
 * いいね機能
 * アウトプット機能
 * マイページ（アウトプット一覧）
+* ページネーション機能
 
 
 # 使用したgem
@@ -64,6 +65,7 @@ URL:https://ledeal-study-plus.com/
 * フォント：font-awesome-sass
 * パンくずリスト: gretel
 * 検索機能: ransack
+* ページネーション機能: kaminari
 
 # 今後実装したい機能
 * 足跡機能
