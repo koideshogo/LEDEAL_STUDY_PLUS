@@ -13,18 +13,16 @@ class OutputsController < ApplicationController
   def create
     @out_put = Output.new(out_put_params)
     @out_put.user = current_user
-    respond_to do |format|
       if @out_put.save
-        format.html { redirect_to @out_put, notice: '投稿が完了しました', class: 'notice' }
-        format.json { render :show, status: :created, location: @out_put }
+        flash[:notice] = 'アウトプットが完了しました'
+        redirect_to @out_put
       else
         @post = Post.find_by(id: @out_put.post_id.to_s)
         @category = Category.find_by(id: @post.category2.to_s)
         @like = Like.new
-        format.html { redirect_to @post, notice: '既に投稿しているか、入力されていない項目があります', class: 'notice' }
-        format.json { render json: @out_put.errors, status: :unprocessable_entity }
+        flash.now[:notice]  = '既に投稿しているか、入力されていない項目があります'
+        render @post
       end
-    end
   end
 
   def show

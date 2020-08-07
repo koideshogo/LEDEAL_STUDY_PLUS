@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class PostsController < ApplicationController
   before_action :sign_in_user
   before_action :set_category, only: %i[index new create show]
@@ -8,7 +6,6 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.all
-    # @like = Like.all
   end
 
   def new
@@ -22,15 +19,13 @@ class PostsController < ApplicationController
     url = @post.youtube_url
     url = url.last(11)
     @post.youtube_url = url
-    respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: '投稿が完了しました', class: 'notice' }
-        format.json { render :show, status: :created, location: @post }
+        flash[:notice] = '投稿が完了しました'
+        redirect_to @post
       else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        flash.now[:notice] = '投稿に失敗しました'
+        render :new
       end
-    end
   end
 
   def show
@@ -40,25 +35,25 @@ class PostsController < ApplicationController
   end
 
   def edit; end
-end
 
-private
-def post_params
-  params.require(:post).permit(:title, :body, :youtube_url, :category_id, :category1, :category2, :release_date, :user)
-end
+  private
+  def post_params
+    params.require(:post).permit(:title, :body, :youtube_url, :category_id, :category1, :category2, :release_date, :user)
+  end
 
-def sign_in_user
-  redirect_to new_user_session_path unless signed_in?
-end
+  def sign_in_user
+    redirect_to new_user_session_path unless signed_in?
+  end
 
-def set_category
-  @mainCategory = Category.where(category_id: nil)
-end
+  def set_category
+    @mainCategory = Category.where(category_id: nil)
+  end
 
-def set_post
-  @posts = Post.find(params[:id])
-end
+  def set_post
+    @posts = Post.find(params[:id])
+  end
 
-def set_categories
-  @categories = Category.all
+  def set_categories
+    @categories = Category.all
+  end
 end

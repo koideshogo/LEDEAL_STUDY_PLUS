@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
   before_action :sign_in_user
   before_action :set_categories, only: %i[show]
