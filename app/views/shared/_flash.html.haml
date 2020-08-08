@@ -1,5 +1,10 @@
--if flash[:notice]
-  .c-flash.c-secsess.c-isFadeout
-  = flash[:notice]
-  .c-closeBtn
-    x
+- if flash[:notice]
+  .c-flash.u-success.isFadeOut
+    = flash[:notice]
+    .c-closeButton
+      X
+- if flash[:error]
+  .c-flash.u-false.isFadeOut
+    = flash[:error]
+    .c-closeButton
+      X

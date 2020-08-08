@@ -1,6 +1,6 @@
 $(function(){
-  $('.c-isFadeout').fadeOut(5000);
-  $('.c-closeBtn').on('click', function(){
-    $('.flash').css('display', 'none');
+  $('.isFadeOut').fadeOut(4000);
+  $('.c-closeButton').on('click', function(){
+    $('.c-flash').css('display','none');
   })
 })

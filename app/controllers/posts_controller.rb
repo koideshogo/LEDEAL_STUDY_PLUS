@@ -23,7 +23,7 @@ class PostsController < ApplicationController
         flash[:notice] = '投稿が完了しました'
         redirect_to @post
       else
-        flash.now[:notice] = '投稿に失敗しました'
+        flash.now[:error] = '投稿に失敗しました'
         render :new
       end
   end

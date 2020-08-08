@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class OutputsController < ApplicationController
   before_action :sign_in_user
   before_action :set_categories, only: %i[show create]
@@ -20,7 +18,7 @@ class OutputsController < ApplicationController
         @post = Post.find_by(id: @out_put.post_id.to_s)
         @category = Category.find_by(id: @post.category2.to_s)
         @like = Like.new
-        flash.now[:notice]  = '既に投稿しているか、入力されていない項目があります'
+        flash.now[:error]  = '既に投稿しているか、入力されていない項目があります'
         render @post
       end
   end
