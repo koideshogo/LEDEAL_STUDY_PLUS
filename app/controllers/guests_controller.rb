@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class GuestsController < ApplicationController
   def create
     user = User.find_or_create_by!(name: 'testUser') do |user|
